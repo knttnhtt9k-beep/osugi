@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>縁の相性診断｜結果</title>
+<meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
+<link rel="stylesheet" href="result.css?v=1">
+</head>
+<body>
+<div class="page" id="page">
+  <div class="cover">
+    <img id="typeImage" alt="" width="1000" height="600">
+    <h1 id="typeName" class="sr-only"></h1>
+    <span id="typeCode" class="sr-only"></span>
+  </div>
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style>
+
+  <section class="sec sec-result">
+    <p class="result-badge"><span class="ico" aria-hidden="true">✦</span>あなたの診断結果</p>
+    <div class="lead-line" id="typeLead"></div>
+    <div class="keywords" id="typeKeywords"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-ico" aria-hidden="true">①</span>
+      <div>
+        <span class="sec-kicker">PROBLEM</span>
+        <h2>今、起きていること</h2>
+      </div>
+    </div>
+    <div class="rich" id="problemText"></div>
+  </section>
+
+  <section class="sec sec-benefits">
+    <div class="sec-head">
+      <span class="sec-ico" aria-hidden="true">♡</span>
+      <div>
+        <span class="sec-kicker">AFTER</span>
+        <h2>順番が揃うと、<br>こんな恋愛に変わります</h2>
+      </div>
+    </div>
+    <ul class="benefit-cards" id="ctaBenefits"></ul>
+  </section>
+
+  <section class="sec sec-warn">
+    <div class="sec-head">
+      <span class="sec-ico ico-warn" aria-hidden="true">!</span>
+      <div>
+        <span class="sec-kicker">IF NOTHING</span>
+        <h2>このまま何も変えなかった場合</h2>
+      </div>
+    </div>
+    <div class="rich" id="ifNothingText"></div>
+  </section>
+
+  <section class="sec sec-hope">
+    <div class="sec-head">
+      <span class="sec-ico" aria-hidden="true">✧</span>
+      <div>
+        <span class="sec-kicker">REWRITE</span>
+        <h2>こんな悩みは、もう感じなくていい</h2>
+      </div>
+    </div>
+    <div class="rich" id="rewriteText"></div>
+  </section>
+
+  <section class="sec sec-seminar" id="seminarOffer">
+    <div class="sec-head">
+      <span class="sec-ico" aria-hidden="true">▶</span>
+      <div>
+        <span class="sec-kicker">SEMINAR</span>
+        <h2 id="seminarSectionTitle">止まっている縁を動かすために<br>宇宙の法則を無料で受け取れます</h2>
+      </div>
+    </div>
+    <div class="rich" id="seminarText"></div>
+    <p class="action-warn" id="seminarScene"></p>
+    <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener">無料セミナーで<br>ことだま・行動・魂の揃え方を知る</a>
+    <p class="btn-note">完全無料・約60分・スマホで視聴可</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-ico" aria-hidden="true">◎</span>
+      <div>
+        <span class="sec-kicker">FUTURE</span>
+        <h2 id="futureSectionTitle">理想の未来</h2>
+      </div>
+    </div>
+    <div class="rich" id="idealText"></div>
+  </section>
+
+  <div class="cta-mid">
+    <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener">今すぐ無料セミナーを見る</a>
+  </div>
+
+  <section class="sec sec-proof">
+    <div class="sec-head">
+      <span class="sec-ico" aria-hidden="true">★</span>
+      <div>
+        <span class="sec-kicker">PROOF</span>
+        <h2>受講者の声</h2>
+      </div>
+    </div>
+    <div class="proof-cards" id="proofCards"></div>
+  </section>
+
+  <section class="sec sec-safe">
+    <div class="sec-head">
+      <span class="sec-ico" aria-hidden="true">✓</span>
+      <div>
+        <span class="sec-kicker">SAFE</span>
+        <h2>安心してください</h2>
+      </div>
+    </div>
+    <div class="rich" id="reassureText"></div>
+  </section>
+
+  <section class="sec sec-teachers">
+    <div class="sec-head">
+      <span class="sec-ico" aria-hidden="true">◎</span>
+      <div>
+        <span class="sec-kicker">TEACHER</span>
+        <h2>講師紹介</h2>
+      </div>
+    </div>
+    <div class="teachers">
+      <article class="teacher">
+        <h3 class="teacher-name">おすぎ</h3>
+        <p class="teacher-role">占い師／宇宙の法則 解説</p>
+        <div class="rich" id="teacherOsugi"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec sec-final">
+    <p class="final-line" id="finalLine">相性が分かった今、叶える側の順番へ進めます。</p>
+    <a class="primary-btn primary-btn-lg js-seminar" href="#" target="_blank" rel="noopener">無料でセミナーを見る</a>
+    <p class="btn-note" id="finalNote">まずは最初の5分だけでも大丈夫です</p>
+    <a class="ghost-btn" href="index.html">診断トップへ戻る</a>
+  </section>
+</div>
+
+<div class="sticky-cta" id="stickyCta">
+  <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener">無料セミナーを見る</a>
+</div>
+
+<script src="types-data.js?v=1"></script>
+<script>
+(function () {
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+  function markBold(s) {
+    return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<strong class="hl">$1</strong>');
+  }
+  function setRich(el, text) {
+    if (!el) return;
+    if (!text) {
+      el.textContent = "";
+      el.style.display = "none";
+      return;
+    }
+    el.style.display = "";
+    var lines = String(text).trim().split("\n").map(function (l) { return l.trimEnd(); });
+    var out = [];
+    var bullets = [];
+    function flushBullets() {
+      if (!bullets.length) return;
+      out.push(
+        '<ul class="bullet-list">' +
+          bullets.map(function (l) {
+            return "<li>" + markBold(l.replace(/^・\s*/, "")) + "</li>";
+          }).join("") +
+        "</ul>"
+      );
+      bullets = [];
+    }
+    lines.forEach(function (line) {
+      if (!line.trim()) {
+        flushBullets();
+        out.push('<div class="para-gap" aria-hidden="true"></div>');
+        return;
+      }
+      if (/^・/.test(line)) {
+        bullets.push(line);
+        return;
+      }
+      flushBullets();
+      if (/^※/.test(line)) {
+        out.push('<p class="note-line">' + markBold(line) + "</p>");
+      } else {
+        out.push('<p class="para">' + markBold(line) + "</p>");
+      }
+    });
+    flushBullets();
+    el.innerHTML = out.join("");
+  }
+
+  var params = new URLSearchParams(location.search);
+  var key = (params.get("id") || "").toUpperCase();
+  var result = window.RESULTS[key];
+
+  if (!result) {
+    document.getElementById("page").innerHTML =
+      '<div class="body" style="padding:40px 22px"><p>タイプが見つかりません。<a href="index.html">診断トップへ</a></p></div>';
+    return;
+  }
+
+  document.title = result.name + "｜縁の相性診断";
+  var og = document.querySelector('meta[property="og:title"]');
+  if (og) og.setAttribute("content", result.name);
+
+  document.getElementById("typeImage").src = result.image;
+  document.getElementById("typeImage").alt = result.name;
+  document.getElementById("typeName").textContent = result.name;
+  document.getElementById("typeCode").textContent = result.code;
+
+  var leadEl = document.getElementById("typeLead");
+  if (leadEl) {
+    leadEl.textContent = result.lead || result.shortName || result.code || "";
+    leadEl.classList.add("lead-type-only");
+  }
+  setRich(document.getElementById("problemText"), result.problem);
+  setRich(document.getElementById("ifNothingText"), result.ifNothing);
+  setRich(document.getElementById("rewriteText"), result.rewrite);
+  setRich(document.getElementById("seminarText"), result.seminar);
+  setRich(document.getElementById("idealText"), result.ideal);
+  setRich(document.getElementById("reassureText"), window.REASSURE_COMMON || "");
+  setRich(document.getElementById("teacherOsugi"), window.TEACHER_OSUGI || "");
+  setRich(document.getElementById("seminarScene"), result.seminarScene || "");
+
+  var proofRoot = document.getElementById("proofCards");
+  if (proofRoot) {
+    proofRoot.innerHTML = "";
+    (window.PROOF_STORIES || []).forEach(function (story) {
+      var card = document.createElement("article");
+      card.className = "proof-card proof-card-text";
+      var meta = document.createElement("div");
+      meta.className = "proof-meta";
+      var name = document.createElement("p");
+      name.className = "proof-name";
+      name.textContent = story.name || "";
+      var title = document.createElement("h3");
+      title.className = "proof-title";
+      title.textContent = story.title || "";
+      var body = document.createElement("div");
+      body.className = "rich proof-body";
+      meta.appendChild(name);
+      meta.appendChild(title);
+      meta.appendChild(body);
+      card.appendChild(meta);
+      proofRoot.appendChild(card);
+      setRich(body, story.body || "");
+    });
+  }
+
+  var seminarTitle = result.seminarTitle || window.SEMINAR_SECTION_TITLE || "";
+  if (seminarTitle) {
+    var st = document.getElementById("seminarSectionTitle");
+    if (st) st.innerHTML = seminarTitle;
+  }
+  if (result.futureTitle) {
+    var ft = document.getElementById("futureSectionTitle");
+    if (ft) ft.innerHTML = result.futureTitle;
+  }
+
+  var seminarUrl = window.SEMINAR_URL || "#";
+  document.querySelectorAll(".js-seminar").forEach(function (a) {
+    a.href = seminarUrl;
+  });
+  var mid = document.querySelector(".sec-seminar .primary-btn.js-seminar");
+  if (mid) {
+    mid.innerHTML =
+      result.ctaMid ||
+      window.SEMINAR_CTA_MID ||
+      "無料セミナーで<br>ことだま・行動・魂の揃え方を知る";
+  }
+  var mid2 = document.querySelector(".cta-mid .primary-btn.js-seminar");
+  if (mid2) mid2.textContent = window.SEMINAR_CTA_BUTTON || "今すぐ無料セミナーを見る";
+  var finalBtn = document.querySelector(".sec-final .js-seminar.primary-btn");
+  if (finalBtn) finalBtn.textContent = window.FINAL_BTN || "無料でセミナーを見る";
+  if (window.FINAL_LINE) document.getElementById("finalLine").textContent = window.FINAL_LINE;
+  if (window.FINAL_NOTE) document.getElementById("finalNote").textContent = window.FINAL_NOTE;
+
+  var kw = document.getElementById("typeKeywords");
+  (result.keywords || []).forEach(function (k) {
+    var span = document.createElement("span");
+    span.className = "keyword-chip";
+    span.textContent = k;
+    kw.appendChild(span);
+  });
+
+  var ul = document.getElementById("ctaBenefits");
+  (result.benefits || []).forEach(function (b, i) {
+    var li = document.createElement("li");
+    li.innerHTML = '<span class="b-num">' + (i + 1) + '</span><span class="b-text"></span>';
+    li.querySelector(".b-text").textContent = b;
+    ul.appendChild(li);
+  });
+
+  var sticky = document.getElementById("stickyCta");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 420) sticky.classList.add("is-on");
+    else sticky.classList.remove("is-on");
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

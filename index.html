@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>私たちは結ばれる？ 縁の相性診断｜おすぎ</title>
+<meta name="description" content="全10問・約2分。あなたと想い人の縁の相性タイプがわかります。診断のあと、宇宙の法則完全解説セミナーへ。">
+<style>
+  :root {
+    --pink: #b87dff;
+    --pink-soft: #f3e9ff;
+    --purple: #7c5cff;
+    --purple-deep: #5a3d9a;
+    --bg: #f6f0ff;
+    --card: #ffffff;
+    --text: #2b2438;
+    --muted: #7a7090;
+    --line: #e6dcf5;
+    --shadow: 0 10px 30px rgba(124, 92, 255, 0.12);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .app {
+    min-height: 100vh;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+  }
+  .screen { display: none; animation: fadeIn .35s ease; }
+  .screen.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  #intro { text-align: center; padding-top: 20px; }
+
+  .hero {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    border-radius: 18px;
+    overflow: hidden;
+    margin: 0 0 18px;
+    box-shadow: var(--shadow);
+    background: #2a1548;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .head-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.92);
+    border: 1px solid #ddd0f5;
+    box-shadow: 0 4px 14px rgba(124,92,255,.18);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    color: #6a4aad;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 1.45rem;
+    line-height: 1.45;
+    margin: 0 0 10px;
+    background: linear-gradient(90deg, #5a3d9a, #8a5cff 55%, #5a3d9a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .head-underline {
+    width: 64px;
+    height: 4px;
+    margin: 0 auto 18px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #b87dff, var(--purple));
+  }
+  .lead {
+    margin: 0 0 24px;
+    text-align: left;
+  }
+  .lead p {
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.85;
+    margin: 0 0 1.05em;
+  }
+  .lead p:last-child { margin-bottom: 0; }
+  .section-title {
+    margin: 0 0 12px;
+    font-size: .95rem;
+    font-weight: 800;
+    line-height: 1.5;
+    color: var(--text);
+    text-align: left;
+  }
+  .scene-list, .empathy-list {
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+  }
+  .scene-list li, .empathy-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: .86rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .scene-list li:last-child,
+  .empathy-list li:last-child { border-bottom: none; }
+  .teacher-box {
+    margin: 0 0 24px;
+    padding: 16px 14px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.9);
+    border: 1px solid var(--line);
+    text-align: left;
+  }
+  .teacher-box h3 {
+    margin: 0 0 10px;
+    font-size: .95rem;
+    line-height: 1.6;
+    color: var(--purple-deep);
+  }
+  .teacher-box p {
+    margin: 0 0 10px;
+    font-size: .84rem;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  .teacher-box p:last-child { margin-bottom: 0; }
+  .reason-list { text-align: left; margin: 0 0 24px; padding: 0; }
+  .reason-item {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .reason-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: .95rem; font-weight: 800; color: #fff;
+    background: linear-gradient(135deg, #9b6dff, #6a4aad);
+  }
+  .reason-item h3 { margin: 2px 0 4px; font-size: .95rem; line-height: 1.45; }
+  .reason-item p { margin: 0; font-size: .84rem; line-height: 1.7; color: var(--muted); }
+  .primary-btn {
+    width: 100%; border: none; border-radius: 999px;
+    padding: 18px 16px; font-size: 1.02rem; font-weight: 700; color: #fff;
+    background: linear-gradient(90deg, #9b6dff, #7c5cff 55%, #5a3d9a);
+    background-size: 200% 100%;
+    box-shadow: 0 10px 24px rgba(124, 92, 255, .35);
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+    animation: btn-zoom 1.8s ease-in-out infinite, btn-shine 4s ease-in-out infinite;
+  }
+  .primary-btn:hover:not(:disabled) {
+    transform: scale(1.04);
+    box-shadow: 0 14px 30px rgba(124, 92, 255, .45);
+    animation-play-state: paused;
+  }
+  .primary-btn:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; animation: none; }
+  @keyframes btn-zoom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); box-shadow: 0 12px 30px rgba(124,92,255,.45), 0 0 0 6px rgba(184,125,255,.14); }
+  }
+  @keyframes btn-shine {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .subnote { margin-top: 14px; font-size: .78rem; color: var(--muted); }
+
+  #quiz { padding-top: 24px; }
+  .topbar {
+    display: flex; justify-content: space-between;
+    margin-bottom: 10px; font-size: .8rem; color: var(--muted); font-weight: 600;
+  }
+  .bar { height: 6px; background: #ebe2f8; border-radius: 999px; overflow: hidden; margin-bottom: 24px; }
+  .bar > span {
+    display: block; height: 100%; width: 0%;
+    background: linear-gradient(90deg, #b87dff, var(--purple));
+    transition: width .25s ease;
+  }
+  .q-card {
+    background: var(--card); border-radius: 18px; padding: 18px 16px;
+    box-shadow: var(--shadow); margin-bottom: 12px;
+  }
+  .q-label { color: var(--purple); font-size: .72rem; font-weight: 800; letter-spacing: .08em; margin-bottom: 8px; }
+  .q-text { font-size: .98rem; font-weight: 700; line-height: 1.55; text-align: left; }
+  .choices { margin-top: 12px; display: grid; gap: 8px; }
+  .choice {
+    width: 100%; text-align: left; border: 1.5px solid var(--line);
+    background: #fff; border-radius: 14px; padding: 12px 14px;
+    font-size: .88rem; line-height: 1.45; color: var(--text); cursor: pointer;
+  }
+  .choice.selected { border-color: var(--purple); background: var(--pink-soft); }
+  #nextBtn { margin-top: 8px; }
+
+  #analyze { text-align: center; padding-top: 120px; }
+  .spinner {
+    width: 64px; height: 64px; margin: 0 auto 24px; border-radius: 50%;
+    border: 4px solid #e4d8f8; border-top-color: var(--purple);
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #analyze h2 { font-size: 1.15rem; margin: 0 0 8px; }
+  #analyze p { color: var(--muted); font-size: .9rem; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <section id="intro" class="screen active">
+    <div class="hero">
+      <img src="images/head_diagnosis.jpg" alt="宇宙の縁の相性診断" width="1000" height="600">
+    </div>
+    <div class="head-badge"><span>✦</span>縁の形が見える<span>✦</span></div>
+    <h1>私たちは結ばれる？<br>縁の相性診断</h1>
+    <div class="head-underline"></div>
+    <div class="lead">
+      <p>好きなのに、なぜかうまく進まない。<br>その理由は、努力不足でも、結ばれない運命でもありません。<br><strong>縁の相性にあった順番で動けていないだけ</strong>です。</p>
+      <p>今、不安でいっぱいでも大丈夫です。<br>不安があるのは、まだ諦めきれていない証拠だから。</p>
+      <p>この診断は、あなたを追い込むためのものではありません。<br>今、二人のあいだで何が起きているかを見つけて、<br>叶える側への一歩につなげるためのものです。</p>
+    </div>
+
+    <h2 class="section-title">こんな気持ち、ありませんか</h2>
+    <ul class="empathy-list">
+      <li>送ったあと、既読だけついて何も返ってこない</li>
+      <li>返信待ちのあいだ、トーク画面を何度も開いてしまう</li>
+      <li>占いでは縁があると言われるのに、現実が動かない</li>
+      <li>誰にも言えない恋を、一人で抱えている</li>
+      <li>ノートも占いも試したのに、次に何をすればいいか分からない</li>
+    </ul>
+
+    <ul class="reason-list">
+      <li class="reason-item">
+        <div class="reason-num">1</div>
+        <div>
+          <h3>縁の相性タイプがわかる（無料）</h3>
+          <p>全10問・約2分。灯火・凪・秘め火・暁の4タイプから、いまの縁の形がわかります。</p>
+        </div>
+      </li>
+      <li class="reason-item">
+        <div class="reason-num">2</div>
+        <div>
+          <h3>止まりやすいポイントが見える</h3>
+          <p>既読・沈黙・内緒・正解探しなど、あなたがついやってしまう勘違いの入口がわかります。</p>
+        </div>
+      </li>
+      <li class="reason-item">
+        <div class="reason-num">3</div>
+        <div>
+          <h3>叶える順番へ進める</h3>
+          <p>診断のあと、<strong>宇宙の法則完全解説セミナー</strong>で、ことだま・行動・魂の揃え方をご案内します。</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="teacher-box">
+      <h3>おすぎ<br>占い師／宇宙の法則 解説</h3>
+      <p>総フォロワー約10万人／鑑定実績2万人以上。</p>
+      <p>結婚を考えていた相手と音信不通。占いとセミナーに200万円以上使っても動かなかった。そこから宇宙の法則と方程式に出会い、再び連絡が来て、いまは夫婦。</p>
+      <p>今は「当たる話」で終わらず、<strong>ことだま・行動・魂を揃えて縁を叶える方法</strong>を伝えています。まずは、あなたと想い人の相性タイプから見ていきます。</p>
+    </div>
+
+    <button class="primary-btn" id="startBtn">✦ 無料で相性を視る</button>
+    <p class="subnote">所要約2分／全10問／結果4タイプ<br>正解・不正解はありません。直感で選んでください。</p>
+  </section>
+
+  <section id="quiz" class="screen">
+    <div class="topbar">
+      <span id="qCount">1〜5問目 / 全10問</span>
+      <span id="qPct">50%</span>
+    </div>
+    <div class="bar"><span id="qBar"></span></div>
+    <div id="pageQuestions"></div>
+    <button class="primary-btn" id="nextBtn" disabled>次へ</button>
+  </section>
+
+  <section id="analyze" class="screen">
+    <div class="spinner"></div>
+    <h2>あなたの縁の形を視ています…</h2>
+    <p>結果ページを準備しています</p>
+  </section>
+</div>
+
+<script src="types-data.js?v=1"></script>
+<script>
+const PAGE_SIZE = 5;
+const QUESTIONS = [
+  {
+    text: "今の二人の状況に、いちばん近いのは？",
+    choices: [
+      { label: "連絡は取れるけれど、反応がいつも気になる", type: "A" },
+      { label: "連絡が途絶えがち／長い沈黙・音信不通", type: "B" },
+      { label: "事情があって、関係を進めにくい", type: "C" },
+      { label: "関係そのものより「どうすれば叶うか」を調べている", type: "D" }
+    ]
+  },
+  {
+    text: "あの人から返信が来ないとき、あなたに近いのは？",
+    choices: [
+      { label: "つい、確認LINEの下書きを開いてしまう", type: "A" },
+      { label: "何もできず、ただ画面を見つめてしまう", type: "B" },
+      { label: "誰にも言えず、一人で抱え込んでしまう", type: "C" },
+      { label: "「次は何を試そう」と、つい調べ始める", type: "D" }
+    ]
+  },
+  {
+    text: "あの人を想うとき、心を占める気持ちは？",
+    choices: [
+      { label: "早く安心したい（反応が気になる）", type: "A" },
+      { label: "会いたいのに動けない、もどかしさ", type: "B" },
+      { label: "打ち明けたいのに、言えないもどかしさ", type: "C" },
+      { label: "「これで合ってるの？」という確信のなさ", type: "D" }
+    ]
+  },
+  {
+    text: "これまで、恋のためにしてきたことは？",
+    choices: [
+      { label: "連絡の頻度やタイミングを工夫した", type: "A" },
+      { label: "ひたすら待った／我慢した", type: "B" },
+      { label: "気持ちを抑えて、周りに合わせてきた", type: "C" },
+      { label: "占い・引き寄せ・ノートなど、たくさん学んだ", type: "D" }
+    ]
+  },
+  {
+    text: "友達に相談すると、言われがちなのは？",
+    choices: [
+      { label: "「ちょっと重いよ」「落ち着いたら？」", type: "A" },
+      { label: "「もう、諦めたら？」", type: "B" },
+      { label: "（そもそも、相談できない）", type: "C" },
+      { label: "「勉強しすぎ」「考えすぎだよ」", type: "D" }
+    ]
+  },
+  {
+    text: "【直感】そっと目を閉じたとき、心に浮かぶ情景は？",
+    choices: [
+      { label: "暗がりに、ぽっと灯る、あたたかな灯り", type: "A" },
+      { label: "風も波もない、静かに凪いだ海", type: "B" },
+      { label: "人には見せない、胸の奥でゆれる小さな炎", type: "C" },
+      { label: "夜が明ける直前の、白み始めた空", type: "D" }
+    ]
+  },
+  {
+    text: "【直感】今のあなたが、いちばん欲しいものは？",
+    choices: [
+      { label: "「大丈夫」という、安心", type: "A" },
+      { label: "もう一度つながる、きっかけ", type: "B" },
+      { label: "罪悪感なく想っていい、という許し", type: "C" },
+      { label: "「これでいい」と思える、確信", type: "D" }
+    ]
+  },
+  {
+    text: "うまくいかないとき、自分を責める方向は？",
+    choices: [
+      { label: "「私、重いのかな」", type: "A" },
+      { label: "「私じゃ、無理なのかな」", type: "B" },
+      { label: "「こんな恋、いけないのかな」", type: "C" },
+      { label: "「学び方が、足りないのかな」", type: "D" }
+    ]
+  },
+  {
+    text: "あなたの理想の未来に、近いのは？",
+    choices: [
+      { label: "反応に振り回されず、穏やかに愛される", type: "A" },
+      { label: "途絶えた縁が、もう一度動き出す", type: "B" },
+      { label: "事情を越えて、堂々と結ばれる", type: "C" },
+      { label: "迷いが消えて、まっすぐ叶えられる", type: "D" }
+    ]
+  },
+  {
+    text: "最後に。あなたの「好き」は、今どれくらい？",
+    choices: [
+      { label: "まだ、諦めたくない", type: "A" },
+      { label: "諦めたいのに、諦められない", type: "B" },
+      { label: "誰にも言えないけど、消えない", type: "C" },
+      { label: "叶えたい気持ちは、はっきり強い", type: "D" }
+    ]
+  }
+];
+
+const answers = new Array(QUESTIONS.length).fill(null);
+let page = 0;
+
+const screens = {
+  intro: document.getElementById("intro"),
+  quiz: document.getElementById("quiz"),
+  analyze: document.getElementById("analyze")
+};
+
+function show(name) {
+  Object.values(screens).forEach((el) => el.classList.remove("active"));
+  screens[name].classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.getElementById("startBtn").addEventListener("click", () => {
+  page = 0;
+  answers.fill(null);
+  show("quiz");
+  renderPage();
+});
+
+function pageRange() {
+  const start = page * PAGE_SIZE;
+  const end = Math.min(start + PAGE_SIZE, QUESTIONS.length);
+  return { start, end };
+}
+
+function renderPage() {
+  const { start, end } = pageRange();
+  const total = QUESTIONS.length;
+  document.getElementById("qCount").textContent = `${start + 1}〜${end}問目 / 全${total}問`;
+  document.getElementById("qPct").textContent = `${Math.round((end / total) * 100)}%`;
+  document.getElementById("qBar").style.width = `${(end / total) * 100}%`;
+
+  const wrap = document.getElementById("pageQuestions");
+  wrap.innerHTML = "";
+  for (let i = start; i < end; i++) {
+    const q = QUESTIONS[i];
+    const card = document.createElement("div");
+    card.className = "q-card";
+    card.innerHTML = `
+      <div class="q-label">Q${i + 1}</div>
+      <div class="q-text">${q.text}</div>
+      <div class="choices"></div>
+    `;
+    const choices = card.querySelector(".choices");
+    q.choices.forEach((c, idx) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "choice" + (answers[i] === idx ? " selected" : "");
+      btn.textContent = c.label;
+      btn.addEventListener("click", () => {
+        answers[i] = idx;
+        choices.querySelectorAll(".choice").forEach((b) => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        updateNextBtn();
+      });
+      choices.appendChild(btn);
+    });
+    wrap.appendChild(card);
+  }
+  const remaining = total - end;
+  document.getElementById("nextBtn").textContent =
+    remaining <= 0 ? "結果を視る" : `次へ（残り${remaining}問）`;
+  updateNextBtn();
+}
+
+function updateNextBtn() {
+  const { start, end } = pageRange();
+  document.getElementById("nextBtn").disabled = !answers.slice(start, end).every((v) => v !== null);
+}
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  const { end } = pageRange();
+  if (end >= QUESTIONS.length) {
+    show("analyze");
+    setTimeout(goToTypePage, 1400);
+  } else {
+    page += 1;
+    renderPage();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+});
+
+function goToTypePage() {
+  const scores = { A: 0, B: 0, C: 0, D: 0 };
+  QUESTIONS.forEach((q, i) => {
+    const choice = q.choices[answers[i]];
+    if (choice) scores[choice.type] += 1;
+  });
+  const order = ["A", "B", "C", "D"];
+  const sorted = order
+    .map((type) => ({ type, score: scores[type], rnd: Math.random() }))
+    .sort((a, b) => b.score - a.score || a.rnd - b.rnd);
+  const key = sorted[0].type;
+
+  try {
+    sessionStorage.setItem("enScores", JSON.stringify(scores));
+    sessionStorage.setItem("enType", key);
+  } catch (e) {}
+
+  const scoreParam = order.map((type) => scores[type]).join(",");
+  location.href = "type.html?id=" + key + "&s=" + encodeURIComponent(scoreParam);
+}
+</script>
+</body>
+</html>
