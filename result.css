@@ -174,7 +174,8 @@ body {
 .rich .hl {
   color: var(--purple-deep);
   font-weight: 800;
-  background: linear-gradient(180deg, transparent 60%, rgba(184, 125, 255, .28) 60%);
+  background: linear-gradient(180deg, transparent 55%, rgba(184, 125, 255, .35) 55%);
+  padding: 0 .05em;
 }
 .bullet-list {
   margin: 0 0 1.2em;

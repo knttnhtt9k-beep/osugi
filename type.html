@@ -141,8 +141,7 @@
       .replace(/>/g, "&gt;");
   }
   function markBold(s) {
-    // 強調記号は使わない。残っていても表示から消す
-    return escapeHtml(String(s).replace(/\*\*/g, ""));
+    return escapeHtml(String(s)).replace(/\*\*(.+?)\*\*/g, '<strong class="hl">$1</strong>');
   }
   function setRich(el, text) {
     if (!el) return;
@@ -150,14 +149,32 @@
       el.innerHTML = "";
       return;
     }
-    var lines = String(text).trim().split("\n");
+    var raw = String(text).trim();
+    // 強調を先に保護（改行をまたいでも壊れないように）
+    var bolds = [];
+    raw = raw.replace(/\*\*([\s\S]+?)\*\*/g, function (_, inner) {
+      bolds.push(inner);
+      return "%%B" + (bolds.length - 1) + "%%";
+    });
+    var lines = raw.split("\n");
     var out = [];
     var bullets = [];
+    function restore(s) {
+      var t = escapeHtml(s);
+      t = t.replace(/%%B(\d+)%%/g, function (_, i) {
+        return '<strong class="hl">' + escapeHtml(bolds[Number(i)]) + "</strong>";
+      });
+      return t;
+    }
     function flush() {
       if (!bullets.length) return;
-      out.push('<ul class="bullet-list">' + bullets.map(function (l) {
-        return "<li>" + markBold(l.replace(/^・\s*/, "")) + "</li>";
-      }).join("") + "</ul>");
+      out.push(
+        '<ul class="bullet-list">' +
+          bullets.map(function (l) {
+            return "<li>" + restore(l.replace(/^・\s*/, "")) + "</li>";
+          }).join("") +
+        "</ul>"
+      );
       bullets = [];
     }
     lines.forEach(function (line) {
@@ -173,9 +190,9 @@
       }
       flush();
       if (/^※/.test(t.trim())) {
-        out.push('<p class="note-line">' + markBold(t.trim()) + "</p>");
+        out.push('<p class="note-line">' + restore(t.trim()) + "</p>");
       } else {
-        out.push('<p class="para">' + markBold(t.trim()) + "</p>");
+        out.push('<p class="para">' + restore(t.trim()) + "</p>");
       }
     });
     flush();
@@ -264,6 +281,8 @@
     bodyWrap.className = "voice-body";
     var text = typeof v === "string" ? v : (v.body || "");
     var meta = typeof v === "string" ? "" : (v.meta || "");
+    // 万が一 \n が文字のまま入っていても改行に直す
+    text = String(text).replace(/\\n/g, "\n");
     text.split("\n").forEach(function (line) {
       if (!line.trim()) {
         var gap = document.createElement("div");
