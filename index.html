@@ -122,17 +122,34 @@
   .empathy-list li:last-child { border-bottom: none; }
   .teacher-box {
     margin: 0 0 24px;
-    padding: 16px 14px;
+    padding: 18px 14px 16px;
     border-radius: 16px;
     background: rgba(255,255,255,.9);
     border: 1px solid var(--line);
     text-align: left;
+  }
+  .teacher-photo {
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(155, 109, 255, .45);
+    box-shadow: 0 8px 22px rgba(90, 60, 160, .18);
+    background: #1a1030;
+  }
+  .teacher-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .teacher-box h3 {
     margin: 0 0 10px;
     font-size: .95rem;
     line-height: 1.6;
     color: var(--purple-deep);
+    text-align: center;
   }
   .teacher-box p {
     margin: 0 0 10px;
@@ -270,6 +287,9 @@
     </ul>
 
     <div class="teacher-box">
+      <div class="teacher-photo">
+        <img src="images/teacher-osugi.png" alt="おすぎ" width="112" height="112">
+      </div>
       <h3>おすぎ<br>占い師／宇宙の法則 解説</h3>
       <p>総フォロワー約10万人／鑑定実績2万人以上。</p>
       <p>結婚を考えていた相手と音信不通。占いとセミナーに200万円以上使っても動かなかった。そこから宇宙の法則と方程式に出会い、再び連絡が来て、いまは夫婦。</p>

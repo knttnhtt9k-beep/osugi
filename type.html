@@ -5,88 +5,111 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>縁の相性診断｜結果</title>
 <meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
-<link rel="stylesheet" href="result.css?v=2">
+<link rel="stylesheet" href="result.css?v=3">
 </head>
 <body>
 <div class="page" id="page">
   <div class="cover">
     <img id="typeImage" alt="" width="1000" height="600">
-    <h1 id="typeName" class="sr-only"></h1>
-    <span id="typeCode" class="sr-only"></span>
   </div>
-  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style>
 
   <section class="sec sec-result">
     <p class="result-badge"><span class="ico" aria-hidden="true">✦</span>あなたの診断結果</p>
-    <div class="lead-line" id="typeLead"></div>
+    <h1 class="type-title" id="leadTitle"></h1>
+    <p class="type-sub" id="leadSub"></p>
     <div class="keywords" id="typeKeywords"></div>
+    <div class="rich intro-rich" id="introText"></div>
   </section>
 
   <section class="sec">
     <div class="sec-head">
-      <span class="sec-ico" aria-hidden="true">①</span>
+      <span class="sec-ico">①</span>
       <div>
-        <span class="sec-kicker">RESULT</span>
-        <h2>相性の特徴と、要注意の勘違い</h2>
+        <span class="sec-kicker">FEATURE</span>
+        <h2>この相性の特徴</h2>
       </div>
     </div>
-    <div class="rich" id="problemText"></div>
+    <div class="rich" id="featureText"></div>
+    <figure class="sec-visual">
+      <img src="images/visual_phone.jpg" alt="" width="1000" height="600" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="sec sec-warn">
+    <div class="sec-head">
+      <span class="sec-ico ico-warn">!</span>
+      <div>
+        <span class="sec-kicker">CAUTION</span>
+        <h2>要注意｜縁が切れてしまう"勘違い"</h2>
+      </div>
+    </div>
+    <div class="rich" id="warnText"></div>
+    <figure class="sec-visual">
+      <img src="images/visual_warn.jpg" alt="" width="1000" height="600" loading="lazy">
+    </figure>
   </section>
 
   <section class="sec sec-hope">
     <div class="sec-head">
-      <span class="sec-ico" aria-hidden="true">✧</span>
+      <span class="sec-ico">✧</span>
       <div>
-        <span class="sec-kicker">NEXT</span>
-        <h2 id="futureSectionTitle">この恋を叶えるために</h2>
+        <span class="sec-kicker">HOPE</span>
+        <h2>この恋を叶えるために</h2>
       </div>
     </div>
-    <div class="rich" id="rewriteText"></div>
+    <div class="rich" id="hopeText"></div>
+    <figure class="sec-visual">
+      <img src="images/visual_path.jpg" alt="" width="1000" height="600" loading="lazy">
+    </figure>
   </section>
 
-  <section class="sec sec-proof" id="voiceSec">
+  <section class="sec sec-proof">
     <div class="sec-head">
-      <span class="sec-ico" aria-hidden="true">★</span>
+      <span class="sec-ico">★</span>
       <div>
         <span class="sec-kicker">VOICE</span>
         <h2 id="voiceSectionTitle">結ばれた人の声</h2>
       </div>
     </div>
-    <div class="rich" id="voicesText"></div>
+    <div id="voiceCards"></div>
+    <p class="note-line" id="voiceNote"></p>
+    <figure class="sec-visual">
+      <img src="images/visual_thread.jpg" alt="" width="1000" height="600" loading="lazy">
+    </figure>
   </section>
 
   <section class="sec sec-seminar" id="seminarOffer">
     <div class="sec-head">
-      <span class="sec-ico" aria-hidden="true">▶</span>
+      <span class="sec-ico">▶</span>
       <div>
         <span class="sec-kicker">SEMINAR</span>
         <h2 id="seminarSectionTitle">宇宙の法則完全解説セミナー<br>無料で受け取れます</h2>
       </div>
     </div>
-    <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener" aria-label="無料セミナーを受け取る">
-      <img id="seminarBanner" src="images/seminar_banner.jpg" alt="宇宙の法則完全解説セミナー" width="723" height="1024" loading="lazy">
+    <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
+      <img src="images/seminar_banner.jpg" alt="宇宙の法則完全解説セミナー" width="723" height="1024" loading="lazy">
     </a>
     <div class="rich" id="seminarText"></div>
-    <p class="action-warn" id="seminarScene"></p>
     <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
     <p class="btn-note">無料・スマホですぐ視聴・しつこい通知なし</p>
   </section>
 
   <section class="sec sec-teachers">
     <div class="sec-head">
-      <span class="sec-ico" aria-hidden="true">◎</span>
+      <span class="sec-ico">◎</span>
       <div>
         <span class="sec-kicker">TEACHER</span>
         <h2>講師紹介</h2>
       </div>
     </div>
-    <div class="teachers">
-      <article class="teacher">
-        <h3 class="teacher-name">おすぎ</h3>
-        <p class="teacher-role">占い師／宇宙の法則 解説</p>
-        <div class="rich" id="teacherOsugi"></div>
-      </article>
-    </div>
+    <article class="teacher">
+      <div class="teacher-photo">
+        <img src="images/teacher-osugi.png" alt="おすぎ" width="132" height="132">
+      </div>
+      <h3 class="teacher-name">おすぎ</h3>
+      <p class="teacher-role">占い師／宇宙の法則 解説</p>
+      <div class="rich" id="teacherOsugi"></div>
+    </article>
   </section>
 
   <section class="sec sec-safe">
@@ -94,12 +117,12 @@
   </section>
 
   <section class="sec sec-final">
-    <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener" aria-label="無料セミナーを受け取る">
+    <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
       <img src="images/seminar_banner.jpg" alt="宇宙の法則完全解説セミナー" width="723" height="1024" loading="lazy">
     </a>
-    <p class="final-line" id="finalLine">あなたの恋は、間違ってなんかいない。ちゃんと、叶う側にあります。</p>
+    <p class="final-line" id="finalLine"></p>
     <a class="primary-btn primary-btn-lg js-seminar" href="#" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
-    <p class="btn-note" id="finalNote">無料・スマホですぐ視聴・しつこい通知なし</p>
+    <p class="btn-note" id="finalNote"></p>
     <a class="ghost-btn" href="index.html">診断トップへ戻る</a>
   </section>
 </div>
@@ -108,7 +131,7 @@
   <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
 </div>
 
-<script src="types-data.js?v=2"></script>
+<script src="types-data.js?v=3"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -123,109 +146,54 @@
   function setRich(el, text) {
     if (!el) return;
     if (!text) {
-      el.textContent = "";
-      el.style.display = "none";
+      el.innerHTML = "";
       return;
     }
-    el.style.display = "";
-    var lines = String(text).trim().split("\n").map(function (l) { return l.trimEnd(); });
+    var lines = String(text).trim().split("\n");
     var out = [];
     var bullets = [];
-    function flushBullets() {
+    function flush() {
       if (!bullets.length) return;
-      out.push(
-        '<ul class="bullet-list">' +
-          bullets.map(function (l) {
-            return "<li>" + markBold(l.replace(/^・\s*/, "")) + "</li>";
-          }).join("") +
-        "</ul>"
-      );
+      out.push('<ul class="bullet-list">' + bullets.map(function (l) {
+        return "<li>" + markBold(l.replace(/^・\s*/, "")) + "</li>";
+      }).join("") + "</ul>");
       bullets = [];
     }
     lines.forEach(function (line) {
-      if (!line.trim()) {
-        flushBullets();
-        out.push('<div class="para-gap" aria-hidden="true"></div>');
+      var t = line.trimEnd();
+      if (!t.trim()) {
+        flush();
+        out.push('<div class="para-gap"></div>');
         return;
       }
-      if (/^・/.test(line)) {
-        bullets.push(line);
+      if (/^・/.test(t.trim())) {
+        bullets.push(t.trim());
         return;
       }
-      flushBullets();
-      if (/^>/.test(line)) {
-        out.push('<blockquote class="voice-quote">' + markBold(line.replace(/^>\s*/, "")) + "</blockquote>");
-      } else if (/^※/.test(line)) {
-        out.push('<p class="note-line">' + markBold(line) + "</p>");
-      } else if (/^◆/.test(line)) {
-        out.push('<h3 class="sec-sub">' + markBold(line.replace(/^◆\s*/, "")) + "</h3>");
+      flush();
+      if (/^※/.test(t.trim())) {
+        out.push('<p class="note-line">' + markBold(t.trim()) + "</p>");
       } else {
-        out.push('<p class="para">' + markBold(line) + "</p>");
+        out.push('<p class="para">' + markBold(t.trim()) + "</p>");
       }
     });
-    flushBullets();
+    flush();
     el.innerHTML = out.join("");
   }
 
-  var params = new URLSearchParams(location.search);
-  var key = (params.get("id") || "").toUpperCase();
+  var key = (new URLSearchParams(location.search).get("id") || "").toUpperCase();
   var result = window.RESULTS[key];
-
   if (!result) {
     document.getElementById("page").innerHTML =
-      '<div class="body" style="padding:40px 22px"><p>タイプが見つかりません。<a href="index.html">診断トップへ</a></p></div>';
+      '<div style="padding:40px 22px"><p>タイプが見つかりません。<a href="index.html">診断トップへ</a></p></div>';
     return;
   }
 
   document.title = result.name + "｜縁の相性診断";
   document.getElementById("typeImage").src = result.image;
   document.getElementById("typeImage").alt = result.name;
-  document.getElementById("typeName").textContent = result.name;
-  document.getElementById("typeCode").textContent = result.code;
-
-  var leadEl = document.getElementById("typeLead");
-  if (leadEl) {
-    leadEl.innerHTML = escapeHtml(result.lead || result.shortName || "").replace(/\n/g, "<br>");
-    leadEl.classList.add("lead-type-only");
-  }
-
-  setRich(document.getElementById("problemText"), result.problem);
-  setRich(document.getElementById("rewriteText"), result.rewrite);
-  setRich(document.getElementById("seminarText"), result.seminar);
-  setRich(document.getElementById("seminarScene"), result.seminarScene || "");
-  setRich(document.getElementById("reassureText"), window.REASSURE_COMMON || "");
-  setRich(document.getElementById("teacherOsugi"), window.TEACHER_OSUGI || "");
-  setRich(document.getElementById("voicesText"), result.voices || "");
-
-  if (result.voiceTitle) {
-    var vt = document.getElementById("voiceSectionTitle");
-    if (vt) vt.textContent = result.voiceTitle;
-  }
-  if (result.seminarTitle) {
-    var st = document.getElementById("seminarSectionTitle");
-    if (st) st.innerHTML = result.seminarTitle;
-  }
-  if (result.futureTitle) {
-    var ft = document.getElementById("futureSectionTitle");
-    if (ft) ft.textContent = result.futureTitle;
-  }
-
-  var bannerSrc = window.SEMINAR_BANNER || "images/seminar_banner.jpg";
-  document.querySelectorAll(".section-banner img").forEach(function (img) {
-    img.src = bannerSrc;
-  });
-
-  var seminarUrl = window.SEMINAR_URL || "#";
-  document.querySelectorAll(".js-seminar").forEach(function (a) {
-    a.href = seminarUrl;
-  });
-
-  var mid = document.querySelector(".sec-seminar .primary-btn.js-seminar");
-  if (mid) mid.textContent = result.ctaMid || window.SEMINAR_CTA_MID || "無料でセミナーを受け取る";
-  var finalBtn = document.querySelector(".sec-final .js-seminar.primary-btn");
-  if (finalBtn) finalBtn.textContent = window.FINAL_BTN || "無料でセミナーを受け取る";
-  if (window.FINAL_LINE) document.getElementById("finalLine").textContent = window.FINAL_LINE;
-  if (window.FINAL_NOTE) document.getElementById("finalNote").textContent = window.FINAL_NOTE;
+  document.getElementById("leadTitle").textContent = result.leadTitle || result.name;
+  document.getElementById("leadSub").innerHTML = escapeHtml(result.leadSub || "").replace(/\n/g, "<br>");
 
   var kw = document.getElementById("typeKeywords");
   (result.keywords || []).forEach(function (k) {
@@ -235,10 +203,49 @@
     kw.appendChild(span);
   });
 
+  setRich(document.getElementById("introText"), result.intro);
+  setRich(document.getElementById("featureText"), result.feature);
+  setRich(document.getElementById("warnText"), result.warn);
+  setRich(document.getElementById("hopeText"), result.hope);
+  setRich(document.getElementById("seminarText"), result.seminar);
+  setRich(document.getElementById("teacherOsugi"), window.TEACHER_OSUGI || "");
+  setRich(document.getElementById("reassureText"), window.REASSURE_COMMON || "");
+
+  if (result.voiceTitle) {
+    document.getElementById("voiceSectionTitle").textContent = result.voiceTitle;
+  }
+  var cards = document.getElementById("voiceCards");
+  (result.voices || []).forEach(function (v) {
+    var q = document.createElement("blockquote");
+    q.className = "voice-quote";
+    q.innerHTML = markBold(v);
+    cards.appendChild(q);
+  });
+  var vn = document.getElementById("voiceNote");
+  if (result.voiceNote) vn.textContent = result.voiceNote;
+
+  document.getElementById("seminarSectionTitle").innerHTML =
+    window.SEMINAR_SECTION_TITLE || "";
+  document.getElementById("finalLine").textContent = window.FINAL_LINE || "";
+  document.getElementById("finalNote").textContent = window.FINAL_NOTE || "";
+
+  var bannerSrc = window.SEMINAR_BANNER || "images/seminar_banner.jpg";
+  document.querySelectorAll(".section-banner img").forEach(function (img) {
+    img.src = bannerSrc;
+  });
+
+  var url = window.SEMINAR_URL || "#";
+  document.querySelectorAll(".js-seminar").forEach(function (a) {
+    a.href = url;
+  });
+  var mid = document.querySelector(".sec-seminar .primary-btn.js-seminar");
+  if (mid) mid.textContent = result.ctaMid || window.SEMINAR_CTA_BUTTON;
+  var finalBtn = document.querySelector(".sec-final .primary-btn.js-seminar");
+  if (finalBtn) finalBtn.textContent = window.FINAL_BTN;
+
   var sticky = document.getElementById("stickyCta");
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 420) sticky.classList.add("is-on");
-    else sticky.classList.remove("is-on");
+    sticky.classList.toggle("is-on", window.scrollY > 420);
   }, { passive: true });
 })();
 </script>
