@@ -207,15 +207,48 @@ body {
   object-fit: cover;
 }
 
-.voice-quote {
-  margin: 0 0 14px;
-  padding: 16px 16px;
-  border-left: 3px solid #9b7dff;
+.voice-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  align-items: start;
+  margin: 0 0 16px;
+  padding: 14px 14px;
+  border-radius: 14px;
   background: #f7f2ff;
-  border-radius: 0 14px 14px 0;
-  font-size: .88rem;
-  line-height: 1.9;
+  border: 1px solid var(--line);
+}
+.voice-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ddd0f5;
+  flex-shrink: 0;
+}
+.voice-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.voice-body {
+  min-width: 0;
+}
+.voice-line {
+  margin: 0 0 .35em;
+  font-size: .8rem;
+  line-height: 1.75;
   color: #3a3048;
+}
+.voice-gap {
+  height: .45em;
+}
+.voice-meta {
+  margin: .55em 0 0;
+  font-size: .72rem;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .section-banner {

@@ -141,7 +141,8 @@
       .replace(/>/g, "&gt;");
   }
   function markBold(s) {
-    return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<strong class="hl">$1</strong>');
+    // 強調記号は使わない。残っていても表示から消す
+    return escapeHtml(String(s).replace(/\*\*/g, ""));
   }
   function setRich(el, text) {
     if (!el) return;
@@ -211,15 +212,80 @@
   setRich(document.getElementById("teacherOsugi"), window.TEACHER_OSUGI || "");
   setRich(document.getElementById("reassureText"), window.REASSURE_COMMON || "");
 
+  // 「セミナーの最初に…」が出た瞬間から追従CTAを出す
+  var sticky = document.getElementById("stickyCta");
+  var stickyUnlocked = false;
+  var triggerPhrase = "セミナーの最初に、はっきりお伝えします";
+  var warnRoot = document.getElementById("warnText");
+  var triggerEl = null;
+  if (warnRoot) {
+    Array.prototype.forEach.call(warnRoot.querySelectorAll(".para"), function (p) {
+      if (p.textContent.indexOf(triggerPhrase) !== -1) {
+        p.id = "stickyTrigger";
+        triggerEl = p;
+      }
+    });
+  }
+  function updateSticky() {
+    if (!sticky || !triggerEl) return;
+    var rect = triggerEl.getBoundingClientRect();
+    // 文言が画面下から入ってきた瞬間に解放
+    if (rect.top < window.innerHeight * 0.9) stickyUnlocked = true;
+    sticky.classList.toggle("is-on", stickyUnlocked);
+  }
+  window.addEventListener("scroll", updateSticky, { passive: true });
+  window.addEventListener("resize", updateSticky);
+  updateSticky();
+
   if (result.voiceTitle) {
     document.getElementById("voiceSectionTitle").textContent = result.voiceTitle;
   }
   var cards = document.getElementById("voiceCards");
   (result.voices || []).forEach(function (v) {
-    var q = document.createElement("blockquote");
-    q.className = "voice-quote";
-    q.innerHTML = markBold(v);
-    cards.appendChild(q);
+    var card = document.createElement("article");
+    card.className = "voice-card";
+
+    var photo = document.createElement("div");
+    photo.className = "voice-photo";
+    var img = document.createElement("img");
+    var src = typeof v === "string" ? "" : (v.image || "");
+    if (window.EMBED_IMAGES && src.indexOf("images/") === 0) {
+      var key = src.replace("images/", "");
+      if (window.EMBED_IMAGES[key]) src = window.EMBED_IMAGES[key];
+    }
+    img.src = src;
+    img.alt = (v && v.meta) ? v.meta : "受講者のイメージ";
+    img.width = 96;
+    img.height = 96;
+    img.loading = "lazy";
+    photo.appendChild(img);
+
+    var bodyWrap = document.createElement("div");
+    bodyWrap.className = "voice-body";
+    var text = typeof v === "string" ? v : (v.body || "");
+    var meta = typeof v === "string" ? "" : (v.meta || "");
+    text.split("\n").forEach(function (line) {
+      if (!line.trim()) {
+        var gap = document.createElement("div");
+        gap.className = "voice-gap";
+        bodyWrap.appendChild(gap);
+        return;
+      }
+      var p = document.createElement("p");
+      p.className = "voice-line";
+      p.textContent = line;
+      bodyWrap.appendChild(p);
+    });
+    if (meta) {
+      var m = document.createElement("p");
+      m.className = "voice-meta";
+      m.textContent = "（" + meta + "）";
+      bodyWrap.appendChild(m);
+    }
+
+    card.appendChild(photo);
+    card.appendChild(bodyWrap);
+    cards.appendChild(card);
   });
   var vn = document.getElementById("voiceNote");
   if (result.voiceNote) vn.textContent = result.voiceNote;
@@ -242,11 +308,6 @@
   if (mid) mid.textContent = result.ctaMid || window.SEMINAR_CTA_BUTTON;
   var finalBtn = document.querySelector(".sec-final .primary-btn.js-seminar");
   if (finalBtn) finalBtn.textContent = window.FINAL_BTN;
-
-  var sticky = document.getElementById("stickyCta");
-  window.addEventListener("scroll", function () {
-    sticky.classList.toggle("is-on", window.scrollY > 420);
-  }, { passive: true });
 })();
 </script>
 </body>
