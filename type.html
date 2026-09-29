@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>縁の相性診断｜結果</title>
 <meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
-<link rel="stylesheet" href="result.css?v=20260929fix">
+<link rel="stylesheet" href="result.css?v=20260929copy">
 </head>
 <body>
 <div class="page" id="page">
@@ -131,7 +131,7 @@
   <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
 </div>
 
-<script src="types-data.js?v=20260929fix"></script>
+<script src="types-data.js?v=20260929copy"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -311,7 +311,7 @@
 
   document.getElementById("seminarSectionTitle").innerHTML =
     window.SEMINAR_SECTION_TITLE || "";
-  document.getElementById("finalLine").textContent = window.FINAL_LINE || "";
+  setRich(document.getElementById("finalLine"), window.FINAL_LINE || "");
   document.getElementById("finalNote").textContent = window.FINAL_NOTE || "";
 
   var bannerSrc = window.SEMINAR_BANNER || "images/seminar_banner.jpg";

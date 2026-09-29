@@ -237,13 +237,13 @@ body {
   min-width: 0;
 }
 .voice-line {
-  margin: 0 0 .35em;
-  font-size: .8rem;
-  line-height: 1.75;
+  margin: 0 0 .15em;
+  font-size: .84rem;
+  line-height: 1.7;
   color: #3a3048;
 }
 .voice-gap {
-  height: .45em;
+  height: .55em;
 }
 .voice-meta {
   margin: .55em 0 0;
@@ -348,6 +348,18 @@ body {
   font-weight: 800;
   line-height: 1.75;
   color: var(--purple-deep);
+  text-align: center;
+}
+.final-line .para {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: center;
+}
+.final-line .para + .para {
+  margin-top: .35em;
 }
 .ghost-btn {
   display: inline-block;
