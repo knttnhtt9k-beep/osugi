@@ -7,29 +7,42 @@
 <meta name="description" content="全10問・約2分。あなたと想い人の縁の相性タイプがわかります。診断のあと、宇宙の法則完全解説セミナーへ。">
 <style>
   :root {
-    --pink: #b87dff;
+    --pink: #c9a0ff;
     --pink-soft: #f3e9ff;
-    --purple: #7c5cff;
-    --purple-deep: #5a3d9a;
-    --bg: #f6f0ff;
+    --purple: #8b6cff;
+    --purple-deep: #4a2d8a;
+    --gold: #ffd700;
+    --bg: #1a0f2e;
     --card: #ffffff;
-    --text: #2b2438;
-    --muted: #7a7090;
-    --line: #e6dcf5;
-    --shadow: 0 10px 30px rgba(124, 92, 255, 0.12);
+    --text: #1a1228;
+    --muted: #5c5270;
+    --line: #e2d4f5;
+    --shadow: 0 10px 30px rgba(124, 92, 255, 0.18);
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
-    background: var(--bg);
     color: var(--text);
+    background-color: #160c28;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 18%, rgba(255,255,255,.55), transparent),
+      radial-gradient(1px 1px at 28% 42%, rgba(255,220,160,.45), transparent),
+      radial-gradient(1.5px 1.5px at 62% 12%, rgba(255,255,255,.4), transparent),
+      radial-gradient(1px 1px at 78% 36%, rgba(210,180,255,.5), transparent),
+      radial-gradient(1.5px 1.5px at 88% 68%, rgba(255,255,255,.35), transparent),
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(140, 80, 220, .55), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 30%, rgba(90, 40, 160, .4), transparent 55%),
+      linear-gradient(180deg, #1a0f2e 0%, #24143d 50%, #1a0f2e 100%);
+    background-attachment: fixed;
   }
   .app {
     min-height: 100vh;
     max-width: 430px;
     margin: 0 auto;
-    padding: 0 20px 40px;
+    padding: 0 18px 48px;
+    background: linear-gradient(180deg, rgba(255,255,255,.97), rgba(252,248,255,.99));
+    box-shadow: 0 0 0 1px rgba(255, 215, 0, .12), 0 0 50px rgba(140, 80, 220, .3);
   }
   .screen { display: none; animation: fadeIn .35s ease; }
   .screen.active { display: block; }
@@ -59,58 +72,71 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 16px;
+    padding: 7px 16px;
     border-radius: 999px;
-    background: rgba(255,255,255,.92);
-    border: 1px solid #ddd0f5;
-    box-shadow: 0 4px 14px rgba(124,92,255,.18);
-    font-size: .72rem;
+    background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,248,220,.92));
+    border: 1px solid rgba(255, 215, 0, .45);
+    box-shadow: 0 4px 18px rgba(124,92,255,.22), 0 0 16px rgba(255,215,0,.18);
+    font-size: .74rem;
     font-weight: 800;
-    letter-spacing: .1em;
+    letter-spacing: .12em;
     color: #6a4aad;
     margin-bottom: 14px;
   }
   .catch {
     margin: 0 0 6px;
-    font-size: .88rem;
+    font-size: .9rem;
     font-weight: 700;
-    letter-spacing: .06em;
+    letter-spacing: .08em;
     color: #7a5cb8;
   }
   h1 {
-    font-size: 1.55rem;
+    font-size: 1.65rem;
     line-height: 1.4;
     margin: 0 0 10px;
-    background: linear-gradient(90deg, #5a3d9a, #8a5cff 55%, #5a3d9a);
+    background: linear-gradient(90deg, #4a2d8a, #8a5cff 45%, #c9a040 95%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .head-underline {
-    width: 64px;
+    width: 72px;
     height: 4px;
     margin: 0 auto 18px;
     border-radius: 999px;
-    background: linear-gradient(90deg, #b87dff, var(--purple));
+    background: linear-gradient(90deg, #b87dff, #ffd700);
+    box-shadow: 0 0 12px rgba(255, 215, 0, .45);
   }
   .lead {
     margin: 0 0 24px;
     text-align: left;
   }
   .lead p {
-    color: var(--muted);
-    font-size: .92rem;
-    line-height: 1.85;
+    color: #3a3048;
+    font-size: .96rem;
+    line-height: 1.9;
     margin: 0 0 1.05em;
   }
   .lead p:last-child { margin-bottom: 0; }
+  .lead strong {
+    color: #6a4aad;
+    font-weight: 800;
+  }
+  .teacher-box strong {
+    color: #6a4aad;
+    font-weight: 800;
+  }
   .section-title {
     margin: 0 0 12px;
-    font-size: .95rem;
+    font-size: 1rem;
     font-weight: 800;
     line-height: 1.5;
-    color: var(--text);
+    color: #2a1848;
     text-align: left;
+  }
+  .section-title::before {
+    content: "✦ ";
+    color: #c9a040;
   }
   .scene-list, .empathy-list {
     margin: 0 0 24px;
@@ -119,21 +145,29 @@
     text-align: left;
   }
   .scene-list li, .empathy-list li {
-    padding: 10px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--line);
-    font-size: .86rem;
-    line-height: 1.65;
-    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.7;
+    color: #3a3048;
   }
-  .scene-list li:last-child,
-  .empathy-list li:last-child { border-bottom: none; }
   .teacher-box {
     margin: 0 0 24px;
-    padding: 18px 14px 16px;
-    border-radius: 16px;
-    background: rgba(255,255,255,.9);
-    border: 1px solid var(--line);
+    padding: 20px 16px 18px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #fff, #f8f2ff);
+    border: 1px solid rgba(201, 160, 255, .45);
+    box-shadow: 0 8px 28px rgba(90, 60, 160, .12), inset 0 0 0 1px rgba(255, 215, 0, .12);
     text-align: left;
+  }
+  .reason-item h3 { margin: 2px 0 4px; font-size: 1rem; line-height: 1.45; color: #2a1848; }
+  .reason-item p { margin: 0; font-size: .88rem; line-height: 1.75; color: #4a4060; }
+  .reason-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: .95rem; font-weight: 800; color: #fff;
+    background: linear-gradient(145deg, #c9a0ff, #7c5cff 50%, #5a3d9a);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, .22);
   }
   .teacher-photo {
     width: 112px;
@@ -173,14 +207,6 @@
     gap: 12px;
     margin-bottom: 16px;
   }
-  .reason-num {
-    width: 36px; height: 36px; border-radius: 50%;
-    display: grid; place-items: center;
-    font-size: .95rem; font-weight: 800; color: #fff;
-    background: linear-gradient(135deg, #9b6dff, #6a4aad);
-  }
-  .reason-item h3 { margin: 2px 0 4px; font-size: .95rem; line-height: 1.45; }
-  .reason-item p { margin: 0; font-size: .84rem; line-height: 1.7; color: var(--muted); }
   .primary-btn {
     width: 100%; border: none; border-radius: 999px;
     padding: 18px 16px; font-size: 1.02rem; font-weight: 700; color: #fff;
