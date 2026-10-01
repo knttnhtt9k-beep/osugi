@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>縁の相性診断｜結果</title>
 <meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
-<link rel="stylesheet" href="result.css?v=20261001art">
+<link rel="stylesheet" href="result.css?v=20261002vis">
 </head>
 <body>
+<canvas id="cosmicCanvas" aria-hidden="true"></canvas>
 <div class="page" id="page">
   <div class="cover">
     <img id="typeImage" alt="" width="1000" height="600">
@@ -131,7 +132,9 @@
   <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
 </div>
 
-<script src="types-data.js?v=20261001art"></script>
+<script src="cosmic.js?v=20261002vis"></script>
+<script src="types-data.js?v=20261002vis"></script>
+<script src="hl-map.js?v=20261002vis"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -143,105 +146,103 @@
   function markBold(s) {
     return escapeHtml(String(s)).replace(/\*\*(.+?)\*\*/g, '<strong class="hl">$1</strong>');
   }
-  var hlBg = null;
-  var hlBgReady = false;
-  var hlBgWaiters = [];
-  function loadHlBg(cb) {
-    if (hlBgReady) { cb(); return; }
-    hlBgWaiters.push(cb);
-    if (hlBg) return;
-    hlBg = new Image();
-    hlBg.onload = function () {
-      hlBgReady = true;
-      hlBgWaiters.splice(0).forEach(function (fn) { fn(); });
-    };
-    hlBg.onerror = function () {
-      hlBgReady = true;
-      hlBgWaiters.splice(0).forEach(function (fn) { fn(); });
-    };
-    hlBg.src = "images/hl_banner_bg.jpg?v=20261001";
+  function normHlKey(text) {
+    return String(text || "")
+      .replace(/\r/g, "")
+      .replace(/[“”]/g, '"')
+      .replace(/[‘’]/g, "'")
+      .replace(/[ー−–—]/g, "ー")
+      .trim();
   }
-  function drawHlArt(text) {
-    var lines = String(text).replace(/\\n/g, "\n").split(/\n/).map(function (l) { return l.trim(); }).filter(Boolean);
-    if (!lines.length) return "";
-    var canvas = document.createElement("canvas");
-    var w = 960;
-    var lineH = 52;
-    var padY = 36;
-    var h = Math.max(140, padY * 2 + lines.length * lineH);
-    canvas.width = w;
-    canvas.height = h;
-    var ctx = canvas.getContext("2d");
-    if (hlBg && hlBg.complete && hlBg.naturalWidth) {
-      var scale = Math.max(w / hlBg.naturalWidth, h / hlBg.naturalHeight);
-      var dw = hlBg.naturalWidth * scale;
-      var dh = hlBg.naturalHeight * scale;
-      ctx.drawImage(hlBg, (w - dw) / 2, (h - dh) / 2, dw, dh);
-      ctx.fillStyle = "rgba(18, 8, 40, 0.28)";
-      ctx.fillRect(0, 0, w, h);
-    } else {
-      var g = ctx.createLinearGradient(0, 0, w, h);
-      g.addColorStop(0, "#2a1548");
-      g.addColorStop(0.5, "#4a2d8a");
-      g.addColorStop(1, "#1a0f2e");
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, w, h);
+  function buildHlArt(text) {
+    var key = normHlKey(text);
+    var map = window.HL_IMAGE_MAP || {};
+    var src = map[key];
+    var fig = document.createElement("figure");
+    fig.className = "hl-art";
+    if (src) {
+      var img = document.createElement("img");
+      img.className = "hl-art-img";
+      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261002vis";
+      img.alt = key.replace(/\n/g, " ");
+      img.loading = "lazy";
+      img.decoding = "async";
+      fig.appendChild(img);
+      return fig;
     }
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    var fontSize = lines.some(function (l) { return l.length > 18; }) ? 30 : 34;
-    ctx.font = "800 " + fontSize + "px 'Hiragino Mincho ProN','Hiragino Mincho Pro','Yu Mincho','Noto Serif JP',serif";
-    lines.forEach(function (line, i) {
-      var y = padY + lineH * i + lineH / 2;
-      ctx.shadowColor = "rgba(255, 210, 80, 0.85)";
-      ctx.shadowBlur = 18;
-      ctx.fillStyle = "#ffe9a0";
-      ctx.fillText(line, w / 2, y);
-      ctx.shadowBlur = 0;
-      var grad = ctx.createLinearGradient(w * 0.2, y - 20, w * 0.8, y + 20);
-      grad.addColorStop(0, "#fff4c2");
-      grad.addColorStop(0.45, "#ffd700");
-      grad.addColorStop(1, "#e8b84a");
-      ctx.fillStyle = grad;
-      ctx.fillText(line, w / 2, y);
+    // 画像が無い行だけ、金文字パネルで仮置き
+    var inner = document.createElement("div");
+    inner.className = "hl-art-inner";
+    var body = document.createElement("div");
+    body.className = "hl-art-text";
+    key.split("\n").forEach(function (line) {
+      if (!line.trim()) return;
+      var span = document.createElement("span");
+      span.textContent = line;
+      body.appendChild(span);
     });
-    return canvas.toDataURL("image/jpeg", 0.92);
+    inner.appendChild(body);
+    fig.appendChild(inner);
+    return fig;
+  }
+  function isHlOnlyPara(p) {
+    if (!p || !p.classList || !p.classList.contains("para")) return false;
+    var kids = Array.prototype.slice.call(p.childNodes).filter(function (n) {
+      return !(n.nodeType === 3 && !String(n.textContent).trim());
+    });
+    return kids.length === 1 && kids[0].nodeType === 1 && kids[0].classList.contains("hl");
   }
   function enhanceHighlights(root) {
     if (!root) return;
-    loadHlBg(function () {
-      root.querySelectorAll(".para").forEach(function (p) {
-        var kids = Array.prototype.slice.call(p.childNodes).filter(function (n) {
-          return !(n.nodeType === 3 && !String(n.textContent).trim());
-        });
-        if (kids.length !== 1 || kids[0].nodeType !== 1 || !kids[0].classList.contains("hl")) return;
-        var text = kids[0].textContent || "";
-        if (!text.trim()) return;
-        var fig = document.createElement("figure");
-        fig.className = "hl-art";
-        var img = document.createElement("img");
-        img.alt = text;
-        img.src = drawHlArt(text);
-        img.loading = "lazy";
-        fig.appendChild(img);
-        p.parentNode.replaceChild(fig, p);
-      });
-      // final-line highlights also
-      if (root.classList && root.classList.contains("final-line")) {
-        root.querySelectorAll(".para").forEach(function (p) {
-          var hl = p.querySelector(".hl");
-          if (!hl) return;
-          var text = hl.textContent || "";
-          var fig = document.createElement("figure");
-          fig.className = "hl-art hl-art-final";
-          var img = document.createElement("img");
-          img.alt = text;
-          img.src = drawHlArt(text);
-          fig.appendChild(img);
-          p.parentNode.replaceChild(fig, p);
-        });
+    var paras = Array.prototype.slice.call(root.querySelectorAll(".para"));
+    var i = 0;
+    while (i < paras.length) {
+      var p = paras[i];
+      if (!isHlOnlyPara(p) || !p.parentNode) {
+        i += 1;
+        continue;
       }
-    });
+      var texts = [(p.querySelector(".hl").textContent || "").trim()];
+      var run = [p];
+      var j = i + 1;
+      while (j < paras.length) {
+        var next = paras[j];
+        var last = run[run.length - 1];
+        var gap = false;
+        var n = last.nextSibling;
+        var reached = false;
+        while (n) {
+          if (n === next) {
+            reached = true;
+            break;
+          }
+          if (n.nodeType === 1) {
+            if (n.classList && n.classList.contains("para-gap")) {
+              gap = true;
+              break;
+            }
+            if (n.classList && (n.classList.contains("para") || n.classList.contains("hl-art"))) {
+              break;
+            }
+          } else if (n.nodeType === 3 && String(n.textContent).trim()) {
+            gap = true;
+            break;
+          }
+          n = n.nextSibling;
+        }
+        if (!reached || gap || !isHlOnlyPara(next)) break;
+        texts.push((next.querySelector(".hl").textContent || "").trim());
+        run.push(next);
+        j += 1;
+      }
+      var combined = texts.filter(Boolean).join("\n");
+      var art = buildHlArt(combined);
+      run[0].parentNode.replaceChild(art, run[0]);
+      for (var k = 1; k < run.length; k++) {
+        if (run[k].parentNode) run[k].parentNode.removeChild(run[k]);
+      }
+      i = j;
+    }
   }
   function setRich(el, text) {
     if (!el) return;
@@ -336,8 +337,13 @@
   var warnRoot = document.getElementById("warnText");
   var triggerEl = null;
   if (warnRoot) {
-    Array.prototype.forEach.call(warnRoot.querySelectorAll(".para"), function (p) {
-      if (p.textContent.indexOf(triggerPhrase) !== -1) {
+    Array.prototype.forEach.call(warnRoot.querySelectorAll(".para, .hl-art"), function (p) {
+      var t = p.alt || p.getAttribute("alt") || p.textContent || "";
+      if (p.tagName === "FIGURE") {
+        var im = p.querySelector("img");
+        t = (im && im.alt) || t;
+      }
+      if (String(t).indexOf(triggerPhrase) !== -1) {
         p.id = "stickyTrigger";
         triggerEl = p;
       }
