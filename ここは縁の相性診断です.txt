@@ -1,0 +1,7 @@
+このフォルダは縁の相性診断です。
+GitHubの osugi リポジトリのルート用です。
+
+公開:
+https://knttnhtt9k-beep.github.io/osugi/
+
+運命の人診断をここに混ぜないでください。
