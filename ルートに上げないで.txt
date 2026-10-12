@@ -1,0 +1,11 @@
+このフォルダを、GitHubの osugi リポジトリのルートに上げないでください。
+上げると、縁の相性診断が消えます。
+
+上げる場所は unmei フォルダの中身ではなく、
+osugi リポジトリの中に unmei フォルダごと置くことです。
+
+縁の相性診断（触らない）:
+https://knttnhtt9k-beep.github.io/osugi/
+
+運命の人診断（こちら）:
+https://knttnhtt9k-beep.github.io/osugi/unmei/

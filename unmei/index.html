@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- SITE=unmei 公開=https://knttnhtt9k-beep.github.io/osugi/unmei/ ルートに上げない -->
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +8,7 @@
 <meta name="description" content="運命の人には、必ず試練がある。あなたの試練と、その乗り越え方が、10問・約2分でわかります。">
 <meta property="og:title" content="運命の人診断｜おすぎ">
 <meta property="og:description" content="運命の人には、必ず試練がある。あなたの試練と、その乗り越え方がわかります。">
-<link rel="stylesheet" href="result.css?v=20261012">
+<link rel="stylesheet" href="result.css?v=20261012d">
 </head>
 <body>
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
@@ -15,18 +16,20 @@
 
   <section id="intro" class="screen active">
     <div class="hero">
-      <img src="images/head_diagnosis.jpg?v=20261012" alt="運命の人診断" width="1280" height="720">
+      <img src="images/head_diagnosis.jpg?v=20261012d" alt="運命の人診断" width="1280" height="720">
     </div>
-    <div class="head-badge"><span>✦</span>FATE DIAGNOSIS<span>✦</span></div>
-    <p class="catch">運命の人には、必ず“試練”がある。<br>あなたの試練と、その乗り越え方がわかります。</p>
+    <p class="head-badge">おすぎ｜運命の人診断</p>
+    <p class="catch">運命の人には、必ず試練がある。<br>あなたの試練と、その乗り越え方がわかります。</p>
     <h1>運命の人診断</h1>
-    <div class="head-underline"></div>
+    <span class="thread-rule" aria-hidden="true"></span>
     <div class="lead">
       <p>あの人は、運命の人なのか。<br>それなのに、どうして結ばれないのか。</p>
-      <p>運命の人とは、必ず試練を伴う相手です。<br>出会ってすぐ、なんの障害もなく結ばれる相手は、運命の人ではありません。<br>与えられた試練を乗り越えた二人だけが、本当の意味で結ばれ、深く愛し合っていきます。</p>
-      <p>運命の人と結ばれて、溺愛される人。<br>好きなのに、すれ違ってしまう人。<br>その違いは、出会いや相性でも、年齢でもありません。<br><strong>与えられた試練に、気づいて乗り越えられたかどうか</strong>——ただ、その違いです。</p>
-      <p>あなたが「よかれ」と思って続けていることの中に、<br>その試練のヒントが隠れています。</p>
-      <p>あなたの運命の人との試練がどんな形なのか、<br>そして、乗り越えるための“最初の一歩”は何か。<br>10問・約2分で、わかります。</p>
+      <p>運命の人とは、必ず試練を伴う相手です。</p>
+      <p>出会ってすぐ、なんの障害もなく結ばれる相手は、運命の人ではありません。<br>与えられた試練を乗り越えた二人だけが、本当の意味で結ばれ、深く愛し合っていきます。</p>
+      <p>運命の人と結ばれて、溺愛される人。<br>好きなのに、すれ違ってしまう人。</p>
+      <p>その違いは、出会いや相性でも、年齢でもありません。<br><strong>与えられた試練に、気づいて乗り越えられたかどうか</strong>——ただ、その違いです。</p>
+      <p>あなたが「よかれ」と思って続けていることの中に、その試練のヒントが隠れています。</p>
+      <p>あなたの運命の人との試練がどんな形なのか。<br>乗り越えるための“最初の一歩”は何か。<br>10問・約2分で、わかります。</p>
     </div>
 
     <button class="primary-btn" id="startBtnTop">▶ 無料で診断する</button>
@@ -37,7 +40,7 @@
       <li>気づけば今日も、あの人のことを考えている</li>
       <li>スマホを手に取るたび、心のどこかで、連絡を期待してしまう</li>
       <li>「今は待つしかない」と、自分に言い聞かせている</li>
-      <li>忘れようとするほど、あの人のことが頭から離れない</li>
+      <li>忘れようとするほど、またあの人のことを考えてしまう</li>
       <li>「結ばれますように」と、願わずにはいられない</li>
       <li>いろいろ試したのに、恋も、人間関係も、お金も、あと一歩が動かない</li>
       <li>本当は、ただ、もっと大切にされたいだけなのに</li>
@@ -105,7 +108,7 @@
   </section>
 </div>
 
-<script src="cosmic.js?v=20261012"></script>
+<script src="cosmic.js?v=20261012d"></script>
 <script>
 const PAGE_SIZE = 5;
 const QUESTIONS = [
