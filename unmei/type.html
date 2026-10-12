@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>運命の人診断｜結果</title>
+<meta property="og:title" content="運命の人診断｜結果">
+<link rel="stylesheet" href="result.css?v=20261012">
+</head>
+<body>
+<canvas id="cosmicCanvas" aria-hidden="true"></canvas>
+<div class="page" id="page">
+  <div class="cover">
+    <img id="typeImage" alt="" width="1280" height="720">
+  </div>
+
+  <section class="sec sec-result">
+    <p class="result-badge"><span aria-hidden="true">✦</span>あなたの診断結果</p>
+    <h1 class="type-title" id="leadTitle"></h1>
+    <p class="type-sub" id="leadSub"></p>
+    <div class="keywords" id="typeKeywords"></div>
+    <div class="rich intro-rich" id="introText"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-ico">1</span>
+      <div>
+        <span class="sec-kicker">NOW</span>
+        <h2>今のあなたへ</h2>
+      </div>
+    </div>
+    <div class="rich" id="empathyText"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-ico">2</span>
+      <div>
+        <span class="sec-kicker">TYPE</span>
+        <h2>このタイプの人</h2>
+      </div>
+    </div>
+    <div class="rich" id="typeText"></div>
+  </section>
+
+  <section class="sec sec-break">
+    <div class="sec-head">
+      <span class="sec-ico ico-warn">!</span>
+      <div>
+        <span class="sec-kicker">TRUTH</span>
+        <h2>知っておいてほしいこと</h2>
+      </div>
+    </div>
+    <div class="rich" id="breakText"></div>
+  </section>
+
+  <section class="sec sec-missing">
+    <div class="sec-head">
+      <span class="sec-ico">✦</span>
+      <div>
+        <span class="sec-kicker">MISSING</span>
+        <h2>抜けていたもの</h2>
+      </div>
+    </div>
+    <div class="rich" id="missingText"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-ico">▶</span>
+      <div>
+        <span class="sec-kicker">TODAY</span>
+        <h2>今日から、ひとつだけ</h2>
+      </div>
+    </div>
+    <div class="rich" id="todayText"></div>
+  </section>
+
+  <section class="sec sec-story">
+    <div class="sec-head">
+      <span class="sec-ico">★</span>
+      <div>
+        <span class="sec-kicker">STORY</span>
+        <h2>同じタイプの人に起きた変化</h2>
+      </div>
+    </div>
+    <article class="story-card">
+      <div class="rich" id="storyText"></div>
+      <p class="story-meta" id="storyMeta"></p>
+    </article>
+  </section>
+
+  <section class="sec sec-video" id="videoOffer">
+    <div class="sec-head">
+      <span class="sec-ico">▶</span>
+      <div>
+        <span class="sec-kicker">VIDEO</span>
+        <h2>運命の人と結ばれ、<br>溺愛されるための無料動画</h2>
+      </div>
+    </div>
+    <p class="limit-chip">ご案内から3日間限定</p>
+    <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
+      <img src="images/video_banner.jpg?v=20261012" alt="運命の人と結ばれ、溺愛されるための無料動画" width="1280" height="720" loading="lazy">
+    </a>
+    <div class="rich" id="videoText"></div>
+    <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener" id="ctaMid">無料動画を見てみる</a>
+    <p class="btn-note">無料・約60分／スマホで今すぐ・LINE追加で視聴／ご案内から3日間限定</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-ico">◎</span>
+      <div>
+        <span class="sec-kicker">TEACHER</span>
+        <h2>おすぎ</h2>
+      </div>
+    </div>
+    <article class="teacher">
+      <div class="teacher-photo">
+        <img src="images/teacher-osugi.png" alt="おすぎ" width="132" height="132">
+      </div>
+      <h3 class="teacher-name">おすぎ</h3>
+      <p class="teacher-role">占い師／宇宙の法則 解説</p>
+      <div class="rich" id="teacherOsugi"></div>
+    </article>
+  </section>
+
+  <section class="sec sec-final">
+    <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
+      <img src="images/video_banner.jpg?v=20261012" alt="運命の人と結ばれ、溺愛されるための無料動画" width="1280" height="720" loading="lazy">
+    </a>
+    <div class="rich final-line" id="finalLine"></div>
+    <a class="primary-btn primary-btn-lg js-seminar" href="#" target="_blank" rel="noopener" id="ctaFinal">無料動画を見てみる</a>
+    <p class="btn-note" id="finalNote">無料・約60分／スマホで今すぐ・LINE追加で視聴／ご案内から3日間限定</p>
+    <p class="note-line" id="footerNote"></p>
+    <a class="ghost-btn" href="index.html">診断トップへ戻る</a>
+  </section>
+</div>
+
+<div class="sticky-cta" id="stickyCta">
+  <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener" id="ctaSticky">無料動画を見てみる</a>
+</div>
+
+<script src="cosmic.js?v=20261012"></script>
+<script src="types-data.js?v=20261012"></script>
+<script src="hl-map.js?v=20261012"></script>
+<script>
+(function () {
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+  function normHlKey(text) {
+    return String(text || "")
+      .replace(/\r/g, "")
+      .replace(/[“”]/g, '"')
+      .replace(/[‘’]/g, "'")
+      .replace(/[ー−–—]/g, "ー")
+      .trim();
+  }
+  function buildHlArt(text) {
+    var key = normHlKey(text);
+    var byType = window.HL_IMAGE_MAP_BY_TYPE || {};
+    var typeId = (new URLSearchParams(location.search).get("id") || "").toUpperCase();
+    var src = (byType[typeId] || {})[key] || (window.HL_IMAGE_MAP || {})[key];
+    var fig = document.createElement("figure");
+    fig.className = "hl-art";
+    if (src) {
+      var img = document.createElement("img");
+      img.className = "hl-art-img";
+      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261012";
+      img.alt = key.replace(/\n/g, " ");
+      img.loading = "lazy";
+      img.decoding = "async";
+      fig.appendChild(img);
+      return fig;
+    }
+    var inner = document.createElement("div");
+    inner.className = "hl-art-inner";
+    var body = document.createElement("div");
+    body.className = "hl-art-text";
+    key.split("\n").forEach(function (line) {
+      if (!line.trim()) return;
+      var span = document.createElement("span");
+      span.textContent = line;
+      body.appendChild(span);
+    });
+    inner.appendChild(body);
+    fig.appendChild(inner);
+    return fig;
+  }
+  function isHlOnlyPara(p) {
+    if (!p || !p.classList || !p.classList.contains("para")) return false;
+    var kids = Array.prototype.slice.call(p.childNodes).filter(function (n) {
+      return !(n.nodeType === 3 && !String(n.textContent).trim());
+    });
+    return kids.length === 1 && kids[0].nodeType === 1 && kids[0].classList.contains("hl");
+  }
+  function enhanceHighlights(root) {
+    if (!root) return;
+    var paras = Array.prototype.slice.call(root.querySelectorAll(".para"));
+    var i = 0;
+    while (i < paras.length) {
+      var p = paras[i];
+      if (!isHlOnlyPara(p) || !p.parentNode) {
+        i += 1;
+        continue;
+      }
+      var texts = [(p.querySelector(".hl").textContent || "").trim()];
+      var run = [p];
+      var j = i + 1;
+      while (j < paras.length) {
+        var next = paras[j];
+        var last = run[run.length - 1];
+        var gap = false;
+        var n = last.nextSibling;
+        var reached = false;
+        while (n) {
+          if (n === next) { reached = true; break; }
+          if (n.nodeType === 1) {
+            if (n.classList && n.classList.contains("para-gap")) { gap = true; break; }
+            if (n.classList && (n.classList.contains("para") || n.classList.contains("hl-art"))) break;
+          } else if (n.nodeType === 3 && String(n.textContent).trim()) {
+            gap = true;
+            break;
+          }
+          n = n.nextSibling;
+        }
+        if (!reached || gap || !isHlOnlyPara(next)) break;
+        texts.push((next.querySelector(".hl").textContent || "").trim());
+        run.push(next);
+        j += 1;
+      }
+      var art = buildHlArt(texts.filter(Boolean).join("\n"));
+      run[0].parentNode.replaceChild(art, run[0]);
+      for (var k = 1; k < run.length; k++) {
+        if (run[k].parentNode) run[k].parentNode.removeChild(run[k]);
+      }
+      i = j;
+    }
+  }
+  function setRich(el, text) {
+    if (!el) return;
+    if (!text) { el.innerHTML = ""; return; }
+    var raw = String(text).trim();
+    var bolds = [];
+    raw = raw.replace(/\*\*([\s\S]+?)\*\*/g, function (_, inner) {
+      bolds.push(inner);
+      return "%%B" + (bolds.length - 1) + "%%";
+    });
+    var lines = raw.split("\n");
+    var out = [];
+    var bullets = [];
+    function restore(s) {
+      var t = escapeHtml(s);
+      t = t.replace(/%%B(\d+)%%/g, function (_, i) {
+        return '<strong class="hl">' + escapeHtml(bolds[Number(i)]) + "</strong>";
+      });
+      return t;
+    }
+    function flush() {
+      if (!bullets.length) return;
+      out.push(
+        '<ul class="bullet-list">' +
+          bullets.map(function (l) {
+            return "<li>" + restore(l.replace(/^・\s*/, "")) + "</li>";
+          }).join("") +
+        "</ul>"
+      );
+      bullets = [];
+    }
+    lines.forEach(function (line) {
+      var t = line.trimEnd();
+      if (!t.trim()) {
+        flush();
+        out.push('<div class="para-gap"></div>');
+        return;
+      }
+      if (/^・/.test(t.trim())) {
+        bullets.push(t.trim());
+        return;
+      }
+      flush();
+      if (/^※/.test(t.trim())) {
+        out.push('<p class="note-line">' + restore(t.trim()) + "</p>");
+      } else {
+        out.push('<p class="para">' + restore(t.trim()) + "</p>");
+      }
+    });
+    flush();
+    el.innerHTML = out.join("");
+    enhanceHighlights(el);
+  }
+
+  var key = (new URLSearchParams(location.search).get("id") || "").toUpperCase();
+  var result = (window.RESULTS || {})[key];
+  if (!result) {
+    document.getElementById("page").innerHTML =
+      '<div style="padding:40px 22px"><p>タイプが見つかりません。<a href="index.html">診断トップへ</a></p></div>';
+    return;
+  }
+
+  document.title = result.name + "｜運命の人診断";
+  document.getElementById("typeImage").src = result.image + "?v=20261012";
+  document.getElementById("typeImage").alt = result.name;
+  document.getElementById("leadTitle").textContent = result.leadTitle || result.name;
+  document.getElementById("leadSub").innerHTML = escapeHtml(result.leadSub || "").replace(/\n/g, "<br>");
+
+  var kw = document.getElementById("typeKeywords");
+  (result.keywords || []).forEach(function (k) {
+    var span = document.createElement("span");
+    span.className = "keyword-chip";
+    span.textContent = k;
+    kw.appendChild(span);
+  });
+
+  setRich(document.getElementById("introText"), result.intro);
+  setRich(document.getElementById("empathyText"), result.empathy);
+  setRich(document.getElementById("typeText"), result.typeBody);
+  setRich(document.getElementById("breakText"), result.break);
+  setRich(document.getElementById("missingText"), result.missing);
+  setRich(document.getElementById("todayText"), result.today);
+  setRich(document.getElementById("storyText"), result.story);
+  document.getElementById("storyMeta").textContent = result.storyMeta || "";
+  setRich(document.getElementById("videoText"), result.video);
+  setRich(document.getElementById("teacherOsugi"), window.TEACHER_OSUGI || "");
+  setRich(document.getElementById("finalLine"), window.FINAL_LINE || "");
+  document.getElementById("footerNote").textContent = window.FOOTER_NOTE || "";
+
+  var url = window.SEMINAR_URL || "#";
+  document.querySelectorAll(".js-seminar").forEach(function (a) { a.href = url; });
+  document.getElementById("ctaMid").textContent = result.cta || window.SEMINAR_CTA_BUTTON;
+  document.getElementById("ctaFinal").textContent = result.cta || window.FINAL_BTN;
+  document.getElementById("ctaSticky").textContent = result.cta || window.SEMINAR_CTA_BUTTON;
+
+  var sticky = document.getElementById("stickyCta");
+  var trigger = document.getElementById("videoOffer");
+  function updateSticky() {
+    if (!sticky || !trigger) return;
+    var rect = trigger.getBoundingClientRect();
+    sticky.classList.toggle("is-on", rect.top < window.innerHeight * 0.85);
+  }
+  window.addEventListener("scroll", updateSticky, { passive: true });
+  window.addEventListener("resize", updateSticky);
+  updateSticky();
+})();
+</script>
+</body>
+</html>

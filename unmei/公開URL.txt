@@ -1,0 +1,8 @@
+このフォルダは「運命の人診断」です。
+GitHubへ上げる場所は、osugiリポジトリの unmei/ だけです。
+
+公開:
+https://knttnhtt9k-beep.github.io/osugi/unmei/
+
+禁止:
+https://knttnhtt9k-beep.github.io/osugi/  （ここは縁の相性診断。上書きしない）
