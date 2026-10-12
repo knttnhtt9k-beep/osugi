@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>運命の人診断｜結果</title>
 <meta property="og:title" content="運命の人診断｜結果">
-<link rel="stylesheet" href="result.css?v=20261012j">
+<link rel="stylesheet" href="result.css?v=20261013b">
 </head>
 <body class="result-world">
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
@@ -27,7 +27,6 @@
     <div class="sec-head">
       <span class="sec-ico">1</span>
       <div>
-        <span class="sec-kicker">いまのあなた</span>
         <h2>今のあなたへ</h2>
       </div>
     </div>
@@ -38,7 +37,6 @@
     <div class="sec-head">
       <span class="sec-ico">2</span>
       <div>
-        <span class="sec-kicker">このタイプ</span>
         <h2>このタイプの人</h2>
       </div>
     </div>
@@ -49,7 +47,6 @@
     <div class="sec-head">
       <span class="sec-ico ico-warn">!</span>
       <div>
-        <span class="sec-kicker">知っておいてほしいこと</span>
         <h2>知っておいてほしいこと</h2>
       </div>
     </div>
@@ -61,7 +58,6 @@
     <div class="sec-head">
       <span class="sec-ico">✦</span>
       <div>
-        <span class="sec-kicker">抜けていたもの</span>
         <h2>抜けていたもの</h2>
       </div>
     </div>
@@ -72,7 +68,6 @@
     <div class="sec-head">
       <span class="sec-ico">▶</span>
       <div>
-        <span class="sec-kicker">今日からひとつ</span>
         <h2>今日から、ひとつだけ</h2>
       </div>
     </div>
@@ -84,7 +79,6 @@
     <div class="sec-head">
       <span class="sec-ico">★</span>
       <div>
-        <span class="sec-kicker">同じタイプの変化</span>
         <h2>同じタイプの人に起きた変化</h2>
       </div>
     </div>
@@ -99,7 +93,7 @@
     <h2 class="offer-title">運命の人と結ばれ、<br>溺愛されるための無料動画</h2>
     <p class="limit-chip">ご案内から3日間限定</p>
     <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
-      <img src="images/video_banner.jpg?v=20261012j" alt="宇宙の法則完全解説セミナー" width="1280" height="720" loading="lazy">
+      <img src="images/video_banner.jpg?v=20261013b" alt="宇宙の法則完全解説セミナー" width="1280" height="720" loading="lazy">
     </a>
     <ul class="get-list" id="getList"></ul>
     <div class="rich" id="videoText"></div>
@@ -108,13 +102,6 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <span class="sec-ico">◎</span>
-      <div>
-        <span class="sec-kicker">TEACHER</span>
-        <h2>おすぎ</h2>
-      </div>
-    </div>
     <article class="teacher">
       <div class="teacher-photo">
         <img src="images/teacher-osugi.png" alt="おすぎ" width="132" height="132">
@@ -127,7 +114,7 @@
 
   <section class="sec sec-final">
     <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
-      <img src="images/video_banner.jpg?v=20261012j" alt="宇宙の法則完全解説セミナー" width="1280" height="720" loading="lazy">
+      <img src="images/video_banner.jpg?v=20261013b" alt="宇宙の法則完全解説セミナー" width="1280" height="720" loading="lazy">
     </a>
     <div class="rich final-line" id="finalLine"></div>
     <a class="primary-btn primary-btn-lg js-seminar" href="#" target="_blank" rel="noopener" id="ctaFinal">無料動画を見てみる</a>
@@ -141,9 +128,9 @@
   <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener" id="ctaSticky">無料動画を見てみる</a>
 </div>
 
-<script src="cosmic.js?v=20261012j"></script>
-<script src="types-data.js?v=20261012j"></script>
-<script src="hl-map.js?v=20261012j"></script>
+<script src="cosmic.js?v=20261013b"></script>
+<script src="types-data.js?v=20261013b"></script>
+<script src="hl-map.js?v=20261013b"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -173,137 +160,64 @@
     }
     return "";
   }
-  function buildHlArt(text) {
-    var key = normHlKey(text);
-    var typeId = (new URLSearchParams(location.search).get("id") || "").toUpperCase();
-    var src = lookupHlSrc(typeId, key);
-    var fig = document.createElement("figure");
-    fig.className = "hl-art";
-    if (src) {
-      var img = document.createElement("img");
-      img.className = "hl-art-img";
-      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261012j";
-      img.alt = key.replace(/\n/g, " ");
-      img.loading = "lazy";
-      img.decoding = "async";
-      fig.appendChild(img);
-      return fig;
-    }
-    var inner = document.createElement("div");
-    inner.className = "hl-art-inner";
-    var body = document.createElement("div");
-    body.className = "hl-art-text";
-    key.split("\n").forEach(function (line) {
-      if (!line.trim()) return;
-      var span = document.createElement("span");
-      span.textContent = line;
-      body.appendChild(span);
-    });
-    inner.appendChild(body);
-    fig.appendChild(inner);
-    return fig;
-  }
-  function isHlOnlyPara(p) {
-    if (!p || !p.classList || !p.classList.contains("para")) return false;
-    var kids = Array.prototype.slice.call(p.childNodes).filter(function (n) {
-      return !(n.nodeType === 3 && !String(n.textContent).trim());
-    });
-    return kids.length === 1 && kids[0].nodeType === 1 && kids[0].classList.contains("hl");
-  }
-  function enhanceHighlights(root) {
-    if (!root) return;
-    var paras = Array.prototype.slice.call(root.querySelectorAll(".para"));
-    var i = 0;
-    while (i < paras.length) {
-      var p = paras[i];
-      if (!isHlOnlyPara(p) || !p.parentNode) {
-        i += 1;
-        continue;
-      }
-      var texts = [(p.querySelector(".hl").textContent || "").trim()];
-      var run = [p];
-      var j = i + 1;
-      while (j < paras.length) {
-        var next = paras[j];
-        var last = run[run.length - 1];
-        var gap = false;
-        var n = last.nextSibling;
-        var reached = false;
-        while (n) {
-          if (n === next) { reached = true; break; }
-          if (n.nodeType === 1) {
-            if (n.classList && n.classList.contains("para-gap")) { gap = true; break; }
-            if (n.classList && (n.classList.contains("para") || n.classList.contains("hl-art"))) break;
-          } else if (n.nodeType === 3 && String(n.textContent).trim()) {
-            gap = true;
-            break;
-          }
-          n = n.nextSibling;
-        }
-        if (!reached || gap || !isHlOnlyPara(next)) break;
-        texts.push((next.querySelector(".hl").textContent || "").trim());
-        run.push(next);
-        j += 1;
-      }
-      var art = buildHlArt(texts.filter(Boolean).join("\n"));
-      run[0].parentNode.replaceChild(art, run[0]);
-      for (var k = 1; k < run.length; k++) {
-        if (run[k].parentNode) run[k].parentNode.removeChild(run[k]);
-      }
-      i = j;
-    }
-  }
   function setRich(el, text) {
     if (!el) return;
     if (!text) { el.innerHTML = ""; return; }
-    var raw = String(text).trim();
+    var raw = String(text).trim().replace(/\n{3,}/g, "\n\n");
     var bolds = [];
     raw = raw.replace(/\*\*([\s\S]+?)\*\*/g, function (_, inner) {
-      bolds.push(inner);
+      bolds.push(String(inner).trim());
       return "%%B" + (bolds.length - 1) + "%%";
     });
-    var lines = raw.split("\n");
+    var blocks = raw.split(/\n\s*\n/);
     var out = [];
-    var bullets = [];
-    function restore(s) {
+    function restoreInline(s) {
       var t = escapeHtml(s);
       t = t.replace(/%%B(\d+)%%/g, function (_, i) {
-        return '<strong class="hl">' + escapeHtml(bolds[Number(i)]) + "</strong>";
+        return '<strong class="hl-box-inline">' + escapeHtml(bolds[Number(i)]).replace(/\n/g, "<br>") + "</strong>";
       });
-      return t;
+      return t.replace(/\n/g, "<br>");
     }
-    function flush() {
-      if (!bullets.length) return;
-      out.push(
-        '<ul class="bullet-list">' +
-          bullets.map(function (l) {
-            return "<li>" + restore(l.replace(/^・\s*/, "")) + "</li>";
-          }).join("") +
-        "</ul>"
-      );
-      bullets = [];
-    }
-    lines.forEach(function (line) {
-      var t = line.trimEnd();
-      if (!t.trim()) {
-        flush();
-        out.push('<div class="para-gap"></div>');
+    blocks.forEach(function (block) {
+      var t = block.replace(/^\n+|\n+$/g, "");
+      if (!t.trim()) return;
+      var only = t.trim().match(/^%%B(\d+)%%$/);
+      if (only) {
+        var hlKey = normHlKey(bolds[Number(only[1])]);
+        var typeId = (new URLSearchParams(location.search).get("id") || "").toUpperCase();
+        var src = lookupHlSrc(typeId, hlKey);
+        if (src) {
+          out.push(
+            '<figure class="hl-art"><img class="hl-art-img" src="' +
+              src + "?v=20261013b" +
+              '" alt="" width="1280" height="720" loading="lazy"></figure>'
+          );
+        } else {
+          out.push('<p class="hl-box">' + escapeHtml(bolds[Number(only[1])]).replace(/\n/g, "<br>") + "</p>");
+        }
         return;
       }
-      if (/^・/.test(t.trim())) {
-        bullets.push(t.trim());
+      var lines = t.split("\n");
+      var bulletish = lines.every(function (l) {
+        return !l.trim() || /^・/.test(l.trim());
+      });
+      if (bulletish) {
+        out.push(
+          '<ul class="bullet-list">' +
+            lines.filter(function (l) { return l.trim(); }).map(function (l) {
+              return "<li>" + restoreInline(l.trim().replace(/^・\s*/, "")) + "</li>";
+            }).join("") +
+          "</ul>"
+        );
         return;
       }
-      flush();
       if (/^※/.test(t.trim())) {
-        out.push('<p class="note-line">' + restore(t.trim()) + "</p>");
-      } else {
-        out.push('<p class="para">' + restore(t.trim()) + "</p>");
+        out.push('<p class="note-line">' + restoreInline(t.trim()) + "</p>");
+        return;
       }
+      out.push('<p class="para">' + restoreInline(t) + "</p>");
     });
-    flush();
     el.innerHTML = out.join("");
-    enhanceHighlights(el);
   }
 
   var key = (new URLSearchParams(location.search).get("id") || "").toUpperCase();
@@ -316,7 +230,7 @@
 
   document.body.setAttribute("data-type", key);
   document.title = result.name + "｜運命の人診断";
-  document.getElementById("typeImage").src = result.image + "?v=20261012j";
+  document.getElementById("typeImage").src = result.image + "?v=20261013b";
   document.getElementById("typeImage").alt = result.name;
   var stamp = document.getElementById("trialStamp");
   if (stamp) stamp.innerHTML = "<b>結</b>あなたの診断結果";
@@ -330,7 +244,7 @@
   var gets = document.getElementById("getList");
   if (gets && result.gets && result.gets.length) {
     gets.innerHTML = result.gets.map(function (t, i) {
-      return "<li><span class=\"get-num\">" + (i + 1) + "</span><span>" + escapeHtml(t) + "</span></li>";
+      return "<li><span class=\"get-num\">" + (i + 1) + "</span><span>" + escapeHtml(t).replace(/\n/g, "<br>") + "</span></li>";
     }).join("");
   }
 
