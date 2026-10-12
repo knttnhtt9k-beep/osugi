@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>縁の相性診断｜結果</title>
-<meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
-<link rel="stylesheet" href="result.css?v=20261002final">
+<title>運命の人診断｜結果</title>
+<meta property="og:title" content="運命の人診断｜結果">
+<link rel="stylesheet" href="result.css?v=20261012">
 </head>
 <body>
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
 <div class="page" id="page">
   <div class="cover">
-    <img id="typeImage" alt="" width="1000" height="600">
+    <img id="typeImage" alt="" width="1280" height="720">
   </div>
 
   <section class="sec sec-result">
-    <p class="result-badge"><span class="ico" aria-hidden="true">✦</span>あなたの診断結果</p>
+    <p class="result-badge"><span aria-hidden="true">✦</span>あなたの診断結果</p>
     <h1 class="type-title" id="leadTitle"></h1>
     <p class="type-sub" id="leadSub"></p>
     <div class="keywords" id="typeKeywords"></div>
@@ -24,83 +24,96 @@
 
   <section class="sec">
     <div class="sec-head">
-      <span class="sec-ico">①</span>
+      <span class="sec-ico">1</span>
       <div>
-        <span class="sec-kicker">FEATURE</span>
-        <h2>この相性の特徴</h2>
+        <span class="sec-kicker">NOW</span>
+        <h2>今のあなたへ</h2>
       </div>
     </div>
-    <div class="rich" id="featureText"></div>
-    <figure class="sec-visual">
-      <img src="images/visual_phone.jpg" alt="" width="1000" height="600" loading="lazy">
-    </figure>
+    <div class="rich" id="empathyText"></div>
   </section>
 
-  <section class="sec sec-warn">
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-ico">2</span>
+      <div>
+        <span class="sec-kicker">TYPE</span>
+        <h2>このタイプの人</h2>
+      </div>
+    </div>
+    <div class="rich" id="typeText"></div>
+  </section>
+
+  <section class="sec sec-break">
     <div class="sec-head">
       <span class="sec-ico ico-warn">!</span>
       <div>
-        <span class="sec-kicker">CAUTION</span>
-        <h2>要注意｜縁が切れてしまう"勘違い"</h2>
+        <span class="sec-kicker">TRUTH</span>
+        <h2>知っておいてほしいこと</h2>
       </div>
     </div>
-    <div class="rich" id="warnText"></div>
-    <figure class="sec-visual">
-      <img src="images/visual_warn.jpg" alt="" width="1000" height="600" loading="lazy">
-    </figure>
+    <div class="rich" id="breakText"></div>
   </section>
 
-  <section class="sec sec-hope">
+  <section class="sec sec-missing">
     <div class="sec-head">
-      <span class="sec-ico">✧</span>
+      <span class="sec-ico">✦</span>
       <div>
-        <span class="sec-kicker">HOPE</span>
-        <h2>この恋を叶えるために</h2>
+        <span class="sec-kicker">MISSING</span>
+        <h2>抜けていたもの</h2>
       </div>
     </div>
-    <div class="rich" id="hopeText"></div>
-    <figure class="sec-visual">
-      <img src="images/visual_path.jpg" alt="" width="1000" height="600" loading="lazy">
-    </figure>
+    <div class="rich" id="missingText"></div>
   </section>
 
-  <section class="sec sec-proof">
-    <div class="sec-head">
-      <span class="sec-ico">★</span>
-      <div>
-        <span class="sec-kicker">VOICE</span>
-        <h2 id="voiceSectionTitle">結ばれた人の声</h2>
-      </div>
-    </div>
-    <div id="voiceCards"></div>
-    <p class="note-line" id="voiceNote"></p>
-    <figure class="sec-visual">
-      <img src="images/visual_thread.jpg" alt="" width="1000" height="600" loading="lazy">
-    </figure>
-  </section>
-
-  <section class="sec sec-seminar" id="seminarOffer">
+  <section class="sec">
     <div class="sec-head">
       <span class="sec-ico">▶</span>
       <div>
-        <span class="sec-kicker">SEMINAR</span>
-        <h2 id="seminarSectionTitle">宇宙の法則完全解説セミナー<br>無料で受け取れます</h2>
+        <span class="sec-kicker">TODAY</span>
+        <h2>今日から、ひとつだけ</h2>
       </div>
     </div>
-    <a class="section-banner js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">
-      <img src="images/seminar_banner.jpg" alt="宇宙の法則完全解説セミナー" width="723" height="1024" loading="lazy">
-    </a>
-    <div class="rich" id="seminarText"></div>
-    <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
-    <p class="btn-note">無料・スマホですぐ視聴・しつこい通知なし</p>
+    <div class="rich" id="todayText"></div>
   </section>
 
-  <section class="sec sec-teachers">
+  <section class="sec sec-story">
+    <div class="sec-head">
+      <span class="sec-ico">★</span>
+      <div>
+        <span class="sec-kicker">STORY</span>
+        <h2>同じタイプの人に起きた変化</h2>
+      </div>
+    </div>
+    <article class="story-card">
+      <div class="rich" id="storyText"></div>
+      <p class="story-meta" id="storyMeta"></p>
+    </article>
+  </section>
+
+  <section class="sec sec-video" id="videoOffer">
+    <div class="sec-head">
+      <span class="sec-ico">▶</span>
+      <div>
+        <span class="sec-kicker">VIDEO</span>
+        <h2>運命の人と結ばれ、<br>溺愛されるための無料動画</h2>
+      </div>
+    </div>
+    <p class="limit-chip">ご案内から3日間限定</p>
+    <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
+      <img src="images/video_banner.jpg?v=20261012" alt="運命の人と結ばれ、溺愛されるための無料動画" width="1280" height="720" loading="lazy">
+    </a>
+    <div class="rich" id="videoText"></div>
+    <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener" id="ctaMid">無料動画を見てみる</a>
+    <p class="btn-note">無料・約60分／スマホで今すぐ・LINE追加で視聴／ご案内から3日間限定</p>
+  </section>
+
+  <section class="sec">
     <div class="sec-head">
       <span class="sec-ico">◎</span>
       <div>
         <span class="sec-kicker">TEACHER</span>
-        <h2>講師紹介</h2>
+        <h2>おすぎ</h2>
       </div>
     </div>
     <article class="teacher">
@@ -113,28 +126,25 @@
     </article>
   </section>
 
-  <section class="sec sec-safe">
-    <div class="rich" id="reassureText"></div>
-  </section>
-
   <section class="sec sec-final">
-    <a class="section-banner js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">
-      <img src="images/seminar_banner.jpg" alt="宇宙の法則完全解説セミナー" width="723" height="1024" loading="lazy">
+    <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
+      <img src="images/video_banner.jpg?v=20261012" alt="運命の人と結ばれ、溺愛されるための無料動画" width="1280" height="720" loading="lazy">
     </a>
-    <p class="final-line" id="finalLine"></p>
-    <a class="primary-btn primary-btn-lg js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
-    <p class="btn-note" id="finalNote"></p>
+    <div class="rich final-line" id="finalLine"></div>
+    <a class="primary-btn primary-btn-lg js-seminar" href="#" target="_blank" rel="noopener" id="ctaFinal">無料動画を見てみる</a>
+    <p class="btn-note" id="finalNote">無料・約60分／スマホで今すぐ・LINE追加で視聴／ご案内から3日間限定</p>
+    <p class="note-line" id="footerNote"></p>
     <a class="ghost-btn" href="index.html">診断トップへ戻る</a>
   </section>
 </div>
 
 <div class="sticky-cta" id="stickyCta">
-  <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
+  <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener" id="ctaSticky">無料動画を見てみる</a>
 </div>
 
-<script src="cosmic.js?v=20261002final"></script>
-<script src="types-data.js?v=20261002final"></script>
-<script src="hl-map.js?v=20261002final"></script>
+<script src="cosmic.js?v=20261012"></script>
+<script src="types-data.js?v=20261012"></script>
+<script src="hl-map.js?v=20261012"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -142,9 +152,6 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
-  }
-  function markBold(s) {
-    return escapeHtml(String(s)).replace(/\*\*(.+?)\*\*/g, '<strong class="hl">$1</strong>');
   }
   function normHlKey(text) {
     return String(text || "")
@@ -164,14 +171,13 @@
     if (src) {
       var img = document.createElement("img");
       img.className = "hl-art-img";
-      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261002final";
+      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261012";
       img.alt = key.replace(/\n/g, " ");
       img.loading = "lazy";
       img.decoding = "async";
       fig.appendChild(img);
       return fig;
     }
-    // 画像が無い行だけ、金文字パネルで仮置き
     var inner = document.createElement("div");
     inner.className = "hl-art-inner";
     var body = document.createElement("div");
@@ -213,18 +219,10 @@
         var n = last.nextSibling;
         var reached = false;
         while (n) {
-          if (n === next) {
-            reached = true;
-            break;
-          }
+          if (n === next) { reached = true; break; }
           if (n.nodeType === 1) {
-            if (n.classList && n.classList.contains("para-gap")) {
-              gap = true;
-              break;
-            }
-            if (n.classList && (n.classList.contains("para") || n.classList.contains("hl-art"))) {
-              break;
-            }
+            if (n.classList && n.classList.contains("para-gap")) { gap = true; break; }
+            if (n.classList && (n.classList.contains("para") || n.classList.contains("hl-art"))) break;
           } else if (n.nodeType === 3 && String(n.textContent).trim()) {
             gap = true;
             break;
@@ -236,8 +234,7 @@
         run.push(next);
         j += 1;
       }
-      var combined = texts.filter(Boolean).join("\n");
-      var art = buildHlArt(combined);
+      var art = buildHlArt(texts.filter(Boolean).join("\n"));
       run[0].parentNode.replaceChild(art, run[0]);
       for (var k = 1; k < run.length; k++) {
         if (run[k].parentNode) run[k].parentNode.removeChild(run[k]);
@@ -247,10 +244,7 @@
   }
   function setRich(el, text) {
     if (!el) return;
-    if (!text) {
-      el.innerHTML = "";
-      return;
-    }
+    if (!text) { el.innerHTML = ""; return; }
     var raw = String(text).trim();
     var bolds = [];
     raw = raw.replace(/\*\*([\s\S]+?)\*\*/g, function (_, inner) {
@@ -302,15 +296,15 @@
   }
 
   var key = (new URLSearchParams(location.search).get("id") || "").toUpperCase();
-  var result = window.RESULTS[key];
+  var result = (window.RESULTS || {})[key];
   if (!result) {
     document.getElementById("page").innerHTML =
       '<div style="padding:40px 22px"><p>タイプが見つかりません。<a href="index.html">診断トップへ</a></p></div>';
     return;
   }
 
-  document.title = result.name + "｜縁の相性診断";
-  document.getElementById("typeImage").src = result.image;
+  document.title = result.name + "｜運命の人診断";
+  document.getElementById("typeImage").src = result.image + "?v=20261012";
   document.getElementById("typeImage").alt = result.name;
   document.getElementById("leadTitle").textContent = result.leadTitle || result.name;
   document.getElementById("leadSub").innerHTML = escapeHtml(result.leadSub || "").replace(/\n/g, "<br>");
@@ -324,116 +318,34 @@
   });
 
   setRich(document.getElementById("introText"), result.intro);
-  setRich(document.getElementById("featureText"), result.feature);
-  setRich(document.getElementById("warnText"), result.warn);
-  setRich(document.getElementById("hopeText"), result.hope);
-  setRich(document.getElementById("seminarText"), result.seminar);
+  setRich(document.getElementById("empathyText"), result.empathy);
+  setRich(document.getElementById("typeText"), result.typeBody);
+  setRich(document.getElementById("breakText"), result.break);
+  setRich(document.getElementById("missingText"), result.missing);
+  setRich(document.getElementById("todayText"), result.today);
+  setRich(document.getElementById("storyText"), result.story);
+  document.getElementById("storyMeta").textContent = result.storyMeta || "";
+  setRich(document.getElementById("videoText"), result.video);
   setRich(document.getElementById("teacherOsugi"), window.TEACHER_OSUGI || "");
-  setRich(document.getElementById("reassureText"), window.REASSURE_COMMON || "");
+  setRich(document.getElementById("finalLine"), window.FINAL_LINE || "");
+  document.getElementById("footerNote").textContent = window.FOOTER_NOTE || "";
 
-  // 「セミナーの最初に…」が出た瞬間から追従CTAを出す
+  var url = window.SEMINAR_URL || "#";
+  document.querySelectorAll(".js-seminar").forEach(function (a) { a.href = url; });
+  document.getElementById("ctaMid").textContent = result.cta || window.SEMINAR_CTA_BUTTON;
+  document.getElementById("ctaFinal").textContent = result.cta || window.FINAL_BTN;
+  document.getElementById("ctaSticky").textContent = result.cta || window.SEMINAR_CTA_BUTTON;
+
   var sticky = document.getElementById("stickyCta");
-  var stickyUnlocked = false;
-  var triggerPhrase = "セミナーの最初に、はっきりお伝えします";
-  var warnRoot = document.getElementById("warnText");
-  var triggerEl = null;
-  if (warnRoot) {
-    Array.prototype.forEach.call(warnRoot.querySelectorAll(".para, .hl-art"), function (p) {
-      var t = p.alt || p.getAttribute("alt") || p.textContent || "";
-      if (p.tagName === "FIGURE") {
-        var im = p.querySelector("img");
-        t = (im && im.alt) || t;
-      }
-      if (String(t).indexOf(triggerPhrase) !== -1) {
-        p.id = "stickyTrigger";
-        triggerEl = p;
-      }
-    });
-  }
+  var trigger = document.getElementById("videoOffer");
   function updateSticky() {
-    if (!sticky || !triggerEl) return;
-    var rect = triggerEl.getBoundingClientRect();
-    // 文言が画面下から入ってきた瞬間に解放
-    if (rect.top < window.innerHeight * 0.9) stickyUnlocked = true;
-    sticky.classList.toggle("is-on", stickyUnlocked);
+    if (!sticky || !trigger) return;
+    var rect = trigger.getBoundingClientRect();
+    sticky.classList.toggle("is-on", rect.top < window.innerHeight * 0.85);
   }
   window.addEventListener("scroll", updateSticky, { passive: true });
   window.addEventListener("resize", updateSticky);
   updateSticky();
-
-  if (result.voiceTitle) {
-    document.getElementById("voiceSectionTitle").textContent = result.voiceTitle;
-  }
-  var cards = document.getElementById("voiceCards");
-  (result.voices || []).forEach(function (v) {
-    var card = document.createElement("article");
-    card.className = "voice-card";
-
-    var photo = document.createElement("div");
-    photo.className = "voice-photo";
-    var img = document.createElement("img");
-    var src = typeof v === "string" ? "" : (v.image || "");
-    if (window.EMBED_IMAGES && src.indexOf("images/") === 0) {
-      var key = src.replace("images/", "");
-      if (window.EMBED_IMAGES[key]) src = window.EMBED_IMAGES[key];
-    }
-    img.src = src;
-    img.alt = (v && v.meta) ? v.meta : "受講者のイメージ";
-    img.width = 96;
-    img.height = 96;
-    img.loading = "lazy";
-    photo.appendChild(img);
-
-    var bodyWrap = document.createElement("div");
-    bodyWrap.className = "voice-body";
-    var text = typeof v === "string" ? v : (v.body || "");
-    var meta = typeof v === "string" ? "" : (v.meta || "");
-    // 万が一 \n が文字のまま入っていても改行に直す
-    text = String(text).replace(/\\n/g, "\n");
-    text.split("\n").forEach(function (line) {
-      if (!line.trim()) {
-        var gap = document.createElement("div");
-        gap.className = "voice-gap";
-        bodyWrap.appendChild(gap);
-        return;
-      }
-      var p = document.createElement("p");
-      p.className = "voice-line";
-      p.textContent = line;
-      bodyWrap.appendChild(p);
-    });
-    if (meta) {
-      var m = document.createElement("p");
-      m.className = "voice-meta";
-      m.textContent = "（" + meta + "）";
-      bodyWrap.appendChild(m);
-    }
-
-    card.appendChild(photo);
-    card.appendChild(bodyWrap);
-    cards.appendChild(card);
-  });
-  var vn = document.getElementById("voiceNote");
-  if (result.voiceNote) vn.textContent = result.voiceNote;
-
-  document.getElementById("seminarSectionTitle").innerHTML =
-    window.SEMINAR_SECTION_TITLE || "";
-  setRich(document.getElementById("finalLine"), window.FINAL_LINE || "");
-  document.getElementById("finalNote").textContent = window.FINAL_NOTE || "";
-
-  var bannerSrc = window.SEMINAR_BANNER || "images/seminar_banner.jpg";
-  document.querySelectorAll(".section-banner img").forEach(function (img) {
-    img.src = bannerSrc;
-  });
-
-  var url = window.SEMINAR_URL || "https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308";
-  document.querySelectorAll(".js-seminar").forEach(function (a) {
-    a.href = url;
-  });
-  var mid = document.querySelector(".sec-seminar .primary-btn.js-seminar");
-  if (mid) mid.textContent = result.ctaMid || window.SEMINAR_CTA_BUTTON;
-  var finalBtn = document.querySelector(".sec-final .primary-btn.js-seminar");
-  if (finalBtn) finalBtn.textContent = window.FINAL_BTN;
 })();
 </script>
 </body>
