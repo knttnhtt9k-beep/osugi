@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>運命の人診断｜おすぎ</title>
+<meta name="description" content="運命の人には、必ず試練がある。あなたの試練と、その乗り越え方が、10問・約2分でわかります。">
+<meta property="og:title" content="運命の人診断｜おすぎ">
+<meta property="og:description" content="運命の人には、必ず試練がある。あなたの試練と、その乗り越え方がわかります。">
+<link rel="stylesheet" href="result.css?v=20261012">
+</head>
+<body>
+<canvas id="cosmicCanvas" aria-hidden="true"></canvas>
+<div class="app">
+
+  <section id="intro" class="screen active">
+    <div class="hero">
+      <img src="images/head_diagnosis.jpg?v=20261012" alt="運命の人診断" width="1280" height="720">
+    </div>
+    <div class="head-badge"><span>✦</span>FATE DIAGNOSIS<span>✦</span></div>
+    <p class="catch">運命の人には、必ず“試練”がある。<br>あなたの試練と、その乗り越え方がわかります。</p>
+    <h1>運命の人診断</h1>
+    <div class="head-underline"></div>
+    <div class="lead">
+      <p>あの人は、運命の人なのか。<br>それなのに、どうして結ばれないのか。</p>
+      <p>運命の人とは、必ず試練を伴う相手です。<br>出会ってすぐ、なんの障害もなく結ばれる相手は、運命の人ではありません。<br>与えられた試練を乗り越えた二人だけが、本当の意味で結ばれ、深く愛し合っていきます。</p>
+      <p>運命の人と結ばれて、溺愛される人。<br>好きなのに、すれ違ってしまう人。<br>その違いは、出会いや相性でも、年齢でもありません。<br><strong>与えられた試練に、気づいて乗り越えられたかどうか</strong>——ただ、その違いです。</p>
+      <p>あなたが「よかれ」と思って続けていることの中に、<br>その試練のヒントが隠れています。</p>
+      <p>あなたの運命の人との試練がどんな形なのか、<br>そして、乗り越えるための“最初の一歩”は何か。<br>10問・約2分で、わかります。</p>
+    </div>
+
+    <button class="primary-btn" id="startBtnTop">▶ 無料で診断する</button>
+    <p class="subnote">約2分・全10問／先に診断から始められます</p>
+
+    <h2 class="section-title">こんなこと、ありませんか</h2>
+    <ul class="empathy-list">
+      <li>気づけば今日も、あの人のことを考えている</li>
+      <li>スマホを手に取るたび、心のどこかで、連絡を期待してしまう</li>
+      <li>「今は待つしかない」と、自分に言い聞かせている</li>
+      <li>忘れようとするほど、あの人のことが頭から離れない</li>
+      <li>「結ばれますように」と、願わずにはいられない</li>
+      <li>いろいろ試したのに、恋も、人間関係も、お金も、あと一歩が動かない</li>
+      <li>本当は、ただ、もっと大切にされたいだけなのに</li>
+    </ul>
+    <div class="lead">
+      <p>ひとつでも当てはまったなら、あなたが悪いわけではありません。<br>誰も、正しいやり方を教えてくれなかっただけです。</p>
+    </div>
+
+    <ul class="reason-list">
+      <li class="reason-item">
+        <div class="reason-num">1</div>
+        <div>
+          <h3>試練のタイプがわかる</h3>
+          <p>あなたと運命の人のあいだにある「試練」が、4つのうちどのタイプか。</p>
+        </div>
+      </li>
+      <li class="reason-item">
+        <div class="reason-num">2</div>
+        <div>
+          <h3>長引かせている常識が見える</h3>
+          <p>その試練を長引かせてしまう、知らずに続けている「間違った常識」。</p>
+        </div>
+      </li>
+      <li class="reason-item">
+        <div class="reason-num">3</div>
+        <div>
+          <h3>最初の一歩がわかる</h3>
+          <p>試練を乗り越えるための、今日からの“最初の一歩”、ひとつ。</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="teacher-box">
+      <div class="teacher-photo-sm">
+        <img src="images/teacher-osugi.png" alt="おすぎ" width="112" height="112">
+      </div>
+      <h3>おすぎ<br>占い師／宇宙の法則 解説</h3>
+      <p>総フォロワー約10万人／鑑定実績2万人以上</p>
+      <p>結婚を考えていた人に、ある日突然振られました。<br>LINEは既読もつかず、電話はコール音が鳴るだけ。</p>
+      <p>占いとセミナーに200万円以上使っても、<br>あの人から連絡が来ることはありませんでした。</p>
+      <p>そこで出会ったのが、宇宙の法則と、<br>運命の人と結ばれ、溺愛されるための<strong>“ある順番”</strong>でした。</p>
+      <p>僕自身も、音信不通という試練のただ中にいた一人です。<br>その試練を乗り越えたら、あの人から連絡が来て、<br>今は、その人と夫婦になっています。しかも、溺愛されています。</p>
+      <p>この順番は、恋愛だけのものではありません。<br>人間関係がうまくいき始める人も、お金の流れが変わる人も、同じ順番を使っています。<br>ただ、いちばん痛い場所から整えないと、どれも動きません。<br>だからこの診断では、まず運命の人とのすれ違いから見ていきます。</p>
+      <p class="note-line">※結果は傾向をお伝えするものです。効果を保証するものではありません。</p>
+    </div>
+
+    <button class="primary-btn" id="startBtn">▶ 無料で診断する</button>
+    <p class="subnote">約2分・全10問／自己紹介は読み飛ばして、先に診断から始められます</p>
+  </section>
+
+  <section id="quiz" class="screen">
+    <div class="topbar">
+      <span id="qCount">1〜5問目 / 全10問</span>
+      <span id="qPct">50%</span>
+    </div>
+    <div class="bar"><span id="qBar"></span></div>
+    <div id="pageQuestions"></div>
+    <button class="primary-btn" id="nextBtn" disabled>次へ</button>
+  </section>
+
+  <section id="analyze" class="screen">
+    <div class="spinner"></div>
+    <h2>あなたの試練を視ています…</h2>
+    <p>運命の人との乗り越え方を、準備しています</p>
+  </section>
+</div>
+
+<script src="cosmic.js?v=20261012"></script>
+<script>
+const PAGE_SIZE = 5;
+const QUESTIONS = [
+  {
+    text: "あの人との今の状況に、いちばん近いのは？",
+    choices: [
+      { label: "連絡が途切れていて、向こうからの連絡を待っている", type: "A" },
+      { label: "忘れようとしているのに、気づくとあの人のことを考えている", type: "B" },
+      { label: "「結ばれますように」と、毎日願っている", type: "C" },
+      { label: "いろんな方法を試しているのに、何も変わらない", type: "D" }
+    ]
+  },
+  {
+    text: "占いや相談で、言われたことがあるのは？",
+    choices: [
+      { label: "「今は待つ時期です」", type: "A" },
+      { label: "「執着を手放せば、戻ってきます」", type: "B" },
+      { label: "「強く願えば、叶います」", type: "C" },
+      { label: "「正しい方法さえ見つかれば、叶いますよ」", type: "D" }
+    ]
+  },
+  {
+    text: "あの人のことで、ついやってしまうのは？",
+    choices: [
+      { label: "トーク画面を開いて、新しいメッセージがないか確かめる", type: "A" },
+      { label: "写真やトーク履歴を消そうとして、結局消せない", type: "B" },
+      { label: "寝る前に、あの人と結ばれる場面を何度も思い浮かべる", type: "C" },
+      { label: "「復縁 方法」「引き寄せ 叶った」などを検索する", type: "D" }
+    ]
+  },
+  {
+    text: "これまで、いちばん続けてきたことは？",
+    choices: [
+      { label: "あの人を信じて、待つこと", type: "A" },
+      { label: "考えないように、前向きでいようとすること", type: "B" },
+      { label: "願いの言葉を、唱えたり書いたりすること", type: "C" },
+      { label: "本や動画、講座、占いで学ぶこと", type: "D" }
+    ]
+  },
+  {
+    text: "不安になったとき、どうしますか？",
+    choices: [
+      { label: "「いつか戻ってくる」と、自分に言い聞かせる", type: "A" },
+      { label: "「不安になると波動が下がる」と、不安を打ち消そうとする", type: "B" },
+      { label: "いつもより多く、願いの言葉を唱える", type: "C" },
+      { label: "新しい占い師や、新しい方法を探す", type: "D" }
+    ]
+  },
+  {
+    text: "「あの人に連絡してみようかな」と思ったとき、近いのは？",
+    choices: [
+      { label: "「今じゃないかも」と、様子を見る", type: "A" },
+      { label: "「期待するとまた落ち込む」と、考えないようにする", type: "B" },
+      { label: "「これはサインだ」と思って、願いを強める", type: "C" },
+      { label: "「本当に送っていいのか」を、調べてから決めようとする", type: "D" }
+    ]
+  },
+  {
+    text: "願いを言葉にするとしたら、近いのは？",
+    choices: [
+      { label: "「いつか戻ってきてくれますように」", type: "A" },
+      { label: "「あの人がいなくても、幸せになれますように」", type: "B" },
+      { label: "「あの人と結ばれますように」", type: "C" },
+      { label: "「正しい方法が見つかりますように」", type: "D" }
+    ]
+  },
+  {
+    text: "友だちに話すと、言われそうなことは？",
+    choices: [
+      { label: "「いい歳なんだから、いつまで待つの？」", type: "A" },
+      { label: "「いい歳なんだから、前を向きなよ」", type: "B" },
+      { label: "「願うだけじゃなくて、何かしたら？」", type: "C" },
+      { label: "「詳しすぎる。もう先生になれるよ」", type: "D" }
+    ]
+  },
+  {
+    text: "これまでにかけたお金や時間で、近いのは？",
+    choices: [
+      { label: "ほとんど使っていない。待つだけだった", type: "A" },
+      { label: "気をまぎらわすために、予定や趣味を増やした", type: "B" },
+      { label: "お守りや待ち受け、願いが叶うグッズにお金を使った", type: "C" },
+      { label: "占いや講座に、合計で何万円も、何十万も使った", type: "D" }
+    ]
+  },
+  {
+    text: "今いちばんつらいのは？（同じ数のときは、これで決まります）",
+    choices: [
+      { label: "いつまで待てばいいのか、わからない", type: "A" },
+      { label: "忘れたいのに、忘れられない", type: "B" },
+      { label: "こんなに願っているのに、届かない", type: "C" },
+      { label: "こんなに学んだのに、変わらない", type: "D" }
+    ]
+  }
+];
+
+const answers = new Array(QUESTIONS.length).fill(null);
+let page = 0;
+
+const screens = {
+  intro: document.getElementById("intro"),
+  quiz: document.getElementById("quiz"),
+  analyze: document.getElementById("analyze")
+};
+
+function show(name) {
+  Object.values(screens).forEach((el) => el.classList.remove("active"));
+  screens[name].classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function startQuiz() {
+  page = 0;
+  answers.fill(null);
+  show("quiz");
+  renderPage();
+}
+
+document.getElementById("startBtn").addEventListener("click", startQuiz);
+document.getElementById("startBtnTop").addEventListener("click", startQuiz);
+
+function pageRange() {
+  const start = page * PAGE_SIZE;
+  const end = Math.min(start + PAGE_SIZE, QUESTIONS.length);
+  return { start, end };
+}
+
+function renderPage() {
+  const { start, end } = pageRange();
+  const total = QUESTIONS.length;
+  document.getElementById("qCount").textContent = `${start + 1}〜${end}問目 / 全${total}問`;
+  document.getElementById("qPct").textContent = `${Math.round((end / total) * 100)}%`;
+  document.getElementById("qBar").style.width = `${(end / total) * 100}%`;
+
+  const wrap = document.getElementById("pageQuestions");
+  wrap.innerHTML = "";
+  for (let i = start; i < end; i++) {
+    const q = QUESTIONS[i];
+    const card = document.createElement("div");
+    card.className = "q-card";
+    card.innerHTML = `
+      <div class="q-label">Q${i + 1}</div>
+      <div class="q-text">${q.text}</div>
+      <div class="choices"></div>
+    `;
+    const choices = card.querySelector(".choices");
+    q.choices.forEach((c, idx) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "choice" + (answers[i] === idx ? " selected" : "");
+      btn.textContent = c.label;
+      btn.addEventListener("click", () => {
+        answers[i] = idx;
+        choices.querySelectorAll(".choice").forEach((b) => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        updateNextBtn();
+      });
+      choices.appendChild(btn);
+    });
+    wrap.appendChild(card);
+  }
+  const remaining = total - end;
+  document.getElementById("nextBtn").textContent =
+    remaining <= 0 ? "▶ 結果を見る" : `次へ（残り${remaining}問）`;
+  updateNextBtn();
+}
+
+function updateNextBtn() {
+  const { start, end } = pageRange();
+  document.getElementById("nextBtn").disabled = !answers.slice(start, end).every((v) => v !== null);
+}
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  const { end } = pageRange();
+  if (end >= QUESTIONS.length) {
+    show("analyze");
+    setTimeout(goToTypePage, 1400);
+  } else {
+    page += 1;
+    renderPage();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+});
+
+function goToTypePage() {
+  const scores = { A: 0, B: 0, C: 0, D: 0 };
+  QUESTIONS.forEach((q, i) => {
+    const choice = q.choices[answers[i]];
+    if (choice) scores[choice.type] += 1;
+  });
+  const order = ["A", "B", "C", "D"];
+  const max = Math.max(scores.A, scores.B, scores.C, scores.D);
+  const tops = order.filter((type) => scores[type] === max);
+  const q10 = QUESTIONS[9].choices[answers[9]];
+  const key = tops.length === 1 ? tops[0] : (q10 && tops.indexOf(q10.type) >= 0 ? q10.type : tops[0]);
+
+  try {
+    sessionStorage.setItem("unmeiScores", JSON.stringify(scores));
+    sessionStorage.setItem("unmeiType", key);
+  } catch (e) {}
+
+  const scoreParam = order.map((type) => scores[type]).join(",");
+  location.href = "type.html?id=" + key + "&s=" + encodeURIComponent(scoreParam);
+}
+</script>
+</body>
+</html>
