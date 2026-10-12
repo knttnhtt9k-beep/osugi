@@ -8,87 +8,103 @@
 <meta name="description" content="運命の人には、必ず試練がある。あなたの試練と、その乗り越え方が、10問・約2分でわかります。">
 <meta property="og:title" content="運命の人診断｜おすぎ">
 <meta property="og:description" content="運命の人には、必ず試練がある。あなたの試練と、その乗り越え方がわかります。">
-<link rel="stylesheet" href="result.css?v=20261012d">
+<link rel="stylesheet" href="result.css?v=20261012i">
 </head>
-<body>
+<body class="lp-body-root">
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
-<div class="app">
+<div class="app app-lp">
 
   <section id="intro" class="screen active">
-    <div class="hero">
-      <img src="images/head_diagnosis.jpg?v=20261012d" alt="運命の人診断" width="1280" height="720">
-    </div>
-    <p class="head-badge">おすぎ｜運命の人診断</p>
-    <p class="catch">運命の人には、必ず試練がある。<br>あなたの試練と、その乗り越え方がわかります。</p>
-    <h1>運命の人診断</h1>
-    <span class="thread-rule" aria-hidden="true"></span>
-    <div class="lead">
-      <p>あの人は、運命の人なのか。<br>それなのに、どうして結ばれないのか。</p>
-      <p>運命の人とは、必ず試練を伴う相手です。</p>
-      <p>出会ってすぐ、なんの障害もなく結ばれる相手は、運命の人ではありません。<br>与えられた試練を乗り越えた二人だけが、本当の意味で結ばれ、深く愛し合っていきます。</p>
-      <p>運命の人と結ばれて、溺愛される人。<br>好きなのに、すれ違ってしまう人。</p>
-      <p>その違いは、出会いや相性でも、年齢でもありません。<br><strong>与えられた試練に、気づいて乗り越えられたかどうか</strong>——ただ、その違いです。</p>
-      <p>あなたが「よかれ」と思って続けていることの中に、その試練のヒントが隠れています。</p>
-      <p>あなたの運命の人との試練がどんな形なのか。<br>乗り越えるための“最初の一歩”は何か。<br>10問・約2分で、わかります。</p>
-    </div>
-
-    <button class="primary-btn" id="startBtnTop">▶ 無料で診断する</button>
-    <p class="subnote">約2分・全10問／先に診断から始められます</p>
-
-    <h2 class="section-title">こんなこと、ありませんか</h2>
-    <ul class="empathy-list">
-      <li>気づけば今日も、あの人のことを考えている</li>
-      <li>スマホを手に取るたび、心のどこかで、連絡を期待してしまう</li>
-      <li>「今は待つしかない」と、自分に言い聞かせている</li>
-      <li>忘れようとするほど、またあの人のことを考えてしまう</li>
-      <li>「結ばれますように」と、願わずにはいられない</li>
-      <li>いろいろ試したのに、恋も、人間関係も、お金も、あと一歩が動かない</li>
-      <li>本当は、ただ、もっと大切にされたいだけなのに</li>
-    </ul>
-    <div class="lead">
-      <p>ひとつでも当てはまったなら、あなたが悪いわけではありません。<br>誰も、正しいやり方を教えてくれなかっただけです。</p>
-    </div>
-
-    <ul class="reason-list">
-      <li class="reason-item">
-        <div class="reason-num">1</div>
-        <div>
-          <h3>試練のタイプがわかる</h3>
-          <p>あなたと運命の人のあいだにある「試練」が、4つのうちどのタイプか。</p>
-        </div>
-      </li>
-      <li class="reason-item">
-        <div class="reason-num">2</div>
-        <div>
-          <h3>長引かせている常識が見える</h3>
-          <p>その試練を長引かせてしまう、知らずに続けている「間違った常識」。</p>
-        </div>
-      </li>
-      <li class="reason-item">
-        <div class="reason-num">3</div>
-        <div>
-          <h3>最初の一歩がわかる</h3>
-          <p>試練を乗り越えるための、今日からの“最初の一歩”、ひとつ。</p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="teacher-box">
-      <div class="teacher-photo-sm">
-        <img src="images/teacher-osugi.png" alt="おすぎ" width="112" height="112">
+    <header class="lp-hero">
+      <img class="lp-hero-img" src="images/head_diagnosis.jpg?v=20261012i" alt="" width="1280" height="720">
+      <div class="lp-hero-veil"></div>
+      <div class="lp-hero-copy">
+        <p class="lp-kicker">おすぎ</p>
+        <h1>運命の人診断</h1>
+        <p class="lp-catch">運命の人には、<br>必ず試練がある。</p>
+        <p class="lp-sub">あなたの試練と、その乗り越え方がわかります。</p>
+        <div class="four-threads" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <button class="primary-btn" id="startBtnTop">▶ 無料で診断する</button>
+        <p class="subnote">約2分・全10問</p>
       </div>
-      <h3>おすぎ<br>占い師／宇宙の法則 解説</h3>
-      <p>総フォロワー約10万人／鑑定実績2万人以上</p>
-      <p>結婚を考えていた人に、ある日突然振られました。<br>LINEは既読もつかず、電話はコール音が鳴るだけ。</p>
-      <p>占いとセミナーに200万円以上使っても、<br>あの人から連絡が来ることはありませんでした。</p>
-      <p>そこで出会ったのが、宇宙の法則と、<br>運命の人と結ばれ、溺愛されるための<strong>“ある順番”</strong>でした。</p>
-      <p>僕自身も、音信不通という試練のただ中にいた一人です。<br>その試練を乗り越えたら、あの人から連絡が来て、<br>今は、その人と夫婦になっています。しかも、溺愛されています。</p>
-      <p>この順番は、恋愛だけのものではありません。<br>人間関係がうまくいき始める人も、お金の流れが変わる人も、同じ順番を使っています。<br>ただ、いちばん痛い場所から整えないと、どれも動きません。<br>だからこの診断では、まず運命の人とのすれ違いから見ていきます。</p>
-      <p class="note-line">※結果は傾向をお伝えするものです。効果を保証するものではありません。</p>
-    </div>
+    </header>
 
-    <button class="primary-btn" id="startBtn">▶ 無料で診断する</button>
-    <p class="subnote">約2分・全10問／自己紹介は読み飛ばして、先に診断から始められます</p>
+    <div class="lp-wrap">
+      <div class="lp-glass reveal">
+        <div class="lead">
+          <p>あの人は、運命の人なのか。<br>それなのに、どうして結ばれないのか。</p>
+          <p>運命の人とは、必ず試練を伴う相手です。</p>
+          <p>出会ってすぐ、なんの障害もなく結ばれる相手は、運命の人ではありません。<br>与えられた試練を乗り越えた二人だけが、本当の意味で結ばれ、深く愛し合っていきます。</p>
+          <p>運命の人と結ばれて、溺愛される人。<br>好きなのに、すれ違ってしまう人。</p>
+          <p>その違いは、出会いや相性でも、年齢でもありません。<br><strong>与えられた試練に、気づいて乗り越えられたかどうか</strong>——ただ、その違いです。</p>
+          <p>あなたが「よかれ」と思って続けていることの中に、その試練のヒントが隠れています。</p>
+          <p>あなたの運命の人との試練がどんな形なのか。<br>乗り越えるための“最初の一歩”は何か。<br>10問・約2分で、わかります。</p>
+        </div>
+      </div>
+
+      <h2 class="section-title reveal">こんなこと、ありませんか</h2>
+      <ul class="empathy-list">
+        <li class="reveal">気づけば今日も、あの人のことを考えている</li>
+        <li class="reveal">スマホを手に取るたび、心のどこかで、連絡を期待してしまう</li>
+        <li class="reveal">「今は待つしかない」と、自分に言い聞かせている</li>
+        <li class="reveal">忘れようとするほど、またあの人のことを考えてしまう</li>
+        <li class="reveal">「結ばれますように」と、願わずにはいられない</li>
+        <li class="reveal">いろいろ試したのに、恋も、人間関係も、お金も、あと一歩が動かない</li>
+        <li class="reveal">本当は、ただ、もっと大切にされたいだけなのに</li>
+      </ul>
+      <div class="lead reveal">
+        <p>ひとつでも当てはまったなら、あなたが悪いわけではありません。<br>誰も、正しいやり方を教えてくれなかっただけです。</p>
+      </div>
+
+      <h2 class="section-title reveal">試練は、四つの筋に分かれます</h2>
+      <ul class="gate-list">
+        <li class="gate gate-a reveal"><b>待つ</b><span>連絡を待っているあいだ、時間が止まっている</span></li>
+        <li class="gate gate-b reveal"><b>想い</b><span>忘れようとしても、あの人のことが戻ってくる</span></li>
+        <li class="gate gate-c reveal"><b>願い</b><span>唱えても、言葉が届いている感じがしない</span></li>
+        <li class="gate gate-d reveal"><b>迷い</b><span>学びは増えるのに、いちばん大事なところで止まる</span></li>
+      </ul>
+
+      <ul class="reason-list">
+        <li class="reason-item reveal">
+          <div class="reason-num">1</div>
+          <div>
+            <h3>試練のタイプがわかる</h3>
+            <p>あなたと運命の人のあいだにある「試練」が、4つのうちどのタイプか。</p>
+          </div>
+        </li>
+        <li class="reason-item reveal">
+          <div class="reason-num">2</div>
+          <div>
+            <h3>長引かせている常識が見える</h3>
+            <p>その試練を長引かせてしまう、知らずに続けている「間違った常識」。</p>
+          </div>
+        </li>
+        <li class="reason-item reveal">
+          <div class="reason-num">3</div>
+          <div>
+            <h3>最初の一歩がわかる</h3>
+            <p>試練を乗り越えるための、今日からの“最初の一歩”、ひとつ。</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="teacher-box reveal">
+        <div class="teacher-photo-sm">
+          <img src="images/teacher-osugi.png" alt="おすぎ" width="112" height="112">
+        </div>
+        <h3>おすぎ<br>占い師／宇宙の法則 解説</h3>
+        <p>総フォロワー約10万人／鑑定実績2万人以上</p>
+        <p>結婚を考えていた人に、ある日突然振られました。<br>LINEは既読もつかず、電話はコール音が鳴るだけ。</p>
+        <p>占いとセミナーに200万円以上使っても、<br>あの人から連絡が来ることはありませんでした。</p>
+        <p>そこで出会ったのが、宇宙の法則と、<br>運命の人と結ばれ、溺愛されるための<strong>“ある順番”</strong>でした。</p>
+        <p>僕自身も、音信不通という試練のただ中にいた一人です。<br>その試練を乗り越えたら、あの人から連絡が来て、<br>今は、その人と夫婦になっています。しかも、溺愛されています。</p>
+        <p>この順番は、恋愛だけのものではありません。<br>人間関係がうまくいき始める人も、お金の流れが変わる人も、同じ順番を使っています。<br>ただ、いちばん痛い場所から整えないと、どれも動きません。<br>だからこの診断では、まず運命の人とのすれ違いから見ていきます。</p>
+        <p class="note-line">※結果は傾向をお伝えするものです。効果を保証するものではありません。</p>
+      </div>
+
+      <button class="primary-btn" id="startBtn">▶ 無料で診断する</button>
+      <p class="subnote">約2分・全10問／自己紹介は読み飛ばして、先に診断から始められます</p>
+    </div>
   </section>
 
   <section id="quiz" class="screen">
@@ -102,13 +118,14 @@
   </section>
 
   <section id="analyze" class="screen">
-    <div class="spinner"></div>
+    <div class="analyze-threads" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <h2>あなたの試練を視ています…</h2>
-    <p>運命の人との乗り越え方を、準備しています</p>
+    <p>四つの筋のうち、今の一本をたどっています</p>
   </section>
 </div>
 
-<script src="cosmic.js?v=20261012d"></script>
+<script src="cosmic.js?v=20261012i"></script>
+<script src="lp.js?v=20261012i"></script>
 <script>
 const PAGE_SIZE = 5;
 const QUESTIONS = [

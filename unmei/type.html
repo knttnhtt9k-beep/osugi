@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>運命の人診断｜結果</title>
 <meta property="og:title" content="運命の人診断｜結果">
-<link rel="stylesheet" href="result.css?v=20261012d">
+<link rel="stylesheet" href="result.css?v=20261012j">
 </head>
-<body>
+<body class="result-world">
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
 <div class="page" id="page">
   <div class="cover">
@@ -99,7 +99,7 @@
     <h2 class="offer-title">運命の人と結ばれ、<br>溺愛されるための無料動画</h2>
     <p class="limit-chip">ご案内から3日間限定</p>
     <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
-      <img src="images/video_banner.jpg?v=20261012d" alt="宇宙の法則完全解説セミナー" width="1280" height="720" loading="lazy">
+      <img src="images/video_banner.jpg?v=20261012j" alt="宇宙の法則完全解説セミナー" width="1280" height="720" loading="lazy">
     </a>
     <ul class="get-list" id="getList"></ul>
     <div class="rich" id="videoText"></div>
@@ -127,7 +127,7 @@
 
   <section class="sec sec-final">
     <a class="section-banner js-seminar" href="#" target="_blank" rel="noopener">
-      <img src="images/video_banner.jpg?v=20261012d" alt="宇宙の法則完全解説セミナー" width="1280" height="720" loading="lazy">
+      <img src="images/video_banner.jpg?v=20261012j" alt="宇宙の法則完全解説セミナー" width="1280" height="720" loading="lazy">
     </a>
     <div class="rich final-line" id="finalLine"></div>
     <a class="primary-btn primary-btn-lg js-seminar" href="#" target="_blank" rel="noopener" id="ctaFinal">無料動画を見てみる</a>
@@ -141,9 +141,9 @@
   <a class="primary-btn js-seminar" href="#" target="_blank" rel="noopener" id="ctaSticky">無料動画を見てみる</a>
 </div>
 
-<script src="cosmic.js?v=20261012d"></script>
-<script src="types-data.js?v=20261012d"></script>
-<script src="hl-map.js?v=20261012d"></script>
+<script src="cosmic.js?v=20261012j"></script>
+<script src="types-data.js?v=20261012j"></script>
+<script src="hl-map.js?v=20261012j"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -160,17 +160,29 @@
       .replace(/[ー−–—]/g, "ー")
       .trim();
   }
+  function lookupHlSrc(typeId, key) {
+    var maps = [(window.HL_IMAGE_MAP_BY_TYPE || {})[typeId] || {}, window.HL_IMAGE_MAP || {}];
+    var compact = key.replace(/\s+/g, "");
+    var i, map, k;
+    for (i = 0; i < maps.length; i++) {
+      map = maps[i];
+      if (map[key]) return map[key];
+      for (k in map) {
+        if (Object.prototype.hasOwnProperty.call(map, k) && k.replace(/\s+/g, "") === compact) return map[k];
+      }
+    }
+    return "";
+  }
   function buildHlArt(text) {
     var key = normHlKey(text);
-    var byType = window.HL_IMAGE_MAP_BY_TYPE || {};
     var typeId = (new URLSearchParams(location.search).get("id") || "").toUpperCase();
-    var src = (byType[typeId] || {})[key] || (window.HL_IMAGE_MAP || {})[key];
+    var src = lookupHlSrc(typeId, key);
     var fig = document.createElement("figure");
     fig.className = "hl-art";
     if (src) {
       var img = document.createElement("img");
       img.className = "hl-art-img";
-      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261012d";
+      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261012j";
       img.alt = key.replace(/\n/g, " ");
       img.loading = "lazy";
       img.decoding = "async";
@@ -304,10 +316,10 @@
 
   document.body.setAttribute("data-type", key);
   document.title = result.name + "｜運命の人診断";
-  document.getElementById("typeImage").src = result.image + "?v=20261012d";
+  document.getElementById("typeImage").src = result.image + "?v=20261012j";
   document.getElementById("typeImage").alt = result.name;
   var stamp = document.getElementById("trialStamp");
-  if (stamp) stamp.innerHTML = "<b>" + key + "</b>" + (result.stamp || "あなたの診断結果");
+  if (stamp) stamp.innerHTML = "<b>結</b>あなたの診断結果";
   document.getElementById("leadTitle").textContent = result.leadTitle || result.name;
   document.getElementById("leadSub").innerHTML = escapeHtml(result.leadSub || "").replace(/\n/g, "<br>");
   var q = document.getElementById("breakQuote");
