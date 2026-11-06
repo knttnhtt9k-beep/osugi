@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>縁の相性診断｜結果</title>
 <meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
-<link rel="stylesheet" href="result.css?v=20261106invitation">
+<link rel="stylesheet" href="result.css?v=20261106knowledge">
 </head>
 <body>
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
@@ -27,7 +27,7 @@
       <span class="sec-ico">①</span>
       <div>
         <span class="sec-kicker">FEATURE</span>
-        <h2>この相性の特徴</h2>
+        <h2>あなたの想いに映る魅力</h2>
       </div>
     </div>
     <div class="rich" id="featureText"></div>
@@ -38,10 +38,10 @@
 
   <section class="sec sec-warn">
     <div class="sec-head">
-      <span class="sec-ico ico-warn">!</span>
+      <span class="sec-ico">✧</span>
       <div>
-        <span class="sec-kicker">CAUTION</span>
-        <h2>この恋で、心が苦しくなるとき</h2>
+        <span class="sec-kicker">MESSAGE</span>
+        <h2>あなたの心に、僕から伝えたいこと</h2>
       </div>
     </div>
     <div class="rich" id="warnText"></div>
@@ -55,7 +55,7 @@
       <span class="sec-ico">✧</span>
       <div>
         <span class="sec-kicker">HOPE</span>
-        <h2>この恋を叶えるために</h2>
+        <h2>あなたが望む、これからの恋</h2>
       </div>
     </div>
     <div class="rich" id="hopeText"></div>
@@ -119,7 +119,7 @@
         <img src="images/teacher-osugi.png" alt="おすぎ" width="132" height="132">
       </div>
       <h3 class="teacher-name">おすぎ</h3>
-      <p class="teacher-role">占い師／宇宙の法則 解説</p>
+      <p class="teacher-role">誰にも相談できない恋に寄り添う占い師</p>
       <div class="rich" id="teacherOsugi"></div>
     </article>
   </section>
@@ -143,9 +143,9 @@
   <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">溺愛術セミナーの日程を見る</a>
 </div>
 
-<script src="cosmic.js?v=20261106invitation"></script>
-<script src="types-data.js?v=20261106invitation"></script>
-<script src="hl-map.js?v=20261106invitation"></script>
+<script src="cosmic.js?v=20261106knowledge"></script>
+<script src="types-data.js?v=20261106knowledge"></script>
+<script src="hl-map.js?v=20261106knowledge"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -175,7 +175,7 @@
     if (src) {
       var img = document.createElement("img");
       img.className = "hl-art-img";
-      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261106invitation";
+      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261106knowledge";
       img.alt = key.replace(/\n/g, " ");
       img.loading = "lazy";
       img.decoding = "async";
@@ -316,7 +316,7 @@
   var result = window.RESULTS[key];
   if (!result) {
     document.getElementById("page").innerHTML =
-      '<div style="padding:40px 22px"><p>タイプが見つかりません。<a href="index.html">診断トップへ</a></p></div>';
+      '<div style="padding:40px 22px"><p>診断結果が見つかりません。<a href="index.html">診断トップへ</a></p></div>';
     return;
   }
 
