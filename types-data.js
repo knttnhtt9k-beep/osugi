@@ -1,6 +1,6 @@
 /* おすぎ｜縁の相性診断：宇宙の溺愛術セミナー案内 */
 window.SEMINAR_URL = "https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064";
-window.SEMINAR_BANNER = "images/seminar_dekiai.png";
+window.SEMINAR_BANNER = "images/seminar_dekiai.jpg";
 
 window.TYPE_ORDER = ["A", "B", "C", "D"];
 
