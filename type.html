@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>縁の相性診断｜結果</title>
 <meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
-<link rel="stylesheet" href="result.css?v=20261002final">
+<link rel="stylesheet" href="result.css?v=20261106dekiai">
 </head>
 <body>
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
@@ -41,7 +41,7 @@
       <span class="sec-ico ico-warn">!</span>
       <div>
         <span class="sec-kicker">CAUTION</span>
-        <h2>要注意｜縁が切れてしまう"勘違い"</h2>
+        <h2>この恋で、心が苦しくなるとき</h2>
       </div>
     </div>
     <div class="rich" id="warnText"></div>
@@ -84,15 +84,15 @@
       <span class="sec-ico">▶</span>
       <div>
         <span class="sec-kicker">SEMINAR</span>
-        <h2 id="seminarSectionTitle">宇宙の法則完全解説セミナー<br>無料で受け取れます</h2>
+        <h2 id="seminarSectionTitle">運命の人から愛される 宇宙の溺愛術<br>11/15・11/16 各21:00〜</h2>
       </div>
     </div>
-    <a class="section-banner js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">
-      <img src="images/seminar_banner.jpg" alt="宇宙の法則完全解説セミナー" width="723" height="1024" loading="lazy">
+    <a class="section-banner js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">
+      <img src="images/seminar_dekiai.png" alt="運命の人から愛される 宇宙の溺愛術" width="1200" height="675" loading="lazy">
     </a>
     <div class="rich" id="seminarText"></div>
-    <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
-    <p class="btn-note">無料・スマホですぐ視聴・しつこい通知なし</p>
+    <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">セミナーの日程を選んで申し込む</a>
+    <p class="btn-note">11/15・11/16 各21:00〜｜Zoom開催・約90分</p>
   </section>
 
   <section class="sec sec-teachers">
@@ -118,23 +118,23 @@
   </section>
 
   <section class="sec sec-final">
-    <a class="section-banner js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">
-      <img src="images/seminar_banner.jpg" alt="宇宙の法則完全解説セミナー" width="723" height="1024" loading="lazy">
+    <a class="section-banner js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">
+      <img src="images/seminar_dekiai.png" alt="運命の人から愛される 宇宙の溺愛術" width="1200" height="675" loading="lazy">
     </a>
     <p class="final-line" id="finalLine"></p>
-    <a class="primary-btn primary-btn-lg js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
+    <a class="primary-btn primary-btn-lg js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">セミナーの日程を選んで申し込む</a>
     <p class="btn-note" id="finalNote"></p>
     <a class="ghost-btn" href="index.html">診断トップへ戻る</a>
   </section>
 </div>
 
 <div class="sticky-cta" id="stickyCta">
-  <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308" target="_blank" rel="noopener">無料でセミナーを受け取る</a>
+  <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">セミナーの日程を選んで申し込む</a>
 </div>
 
-<script src="cosmic.js?v=20261002final"></script>
-<script src="types-data.js?v=20261002final"></script>
-<script src="hl-map.js?v=20261002final"></script>
+<script src="cosmic.js?v=20261106dekiai"></script>
+<script src="types-data.js?v=20261106dekiai"></script>
+<script src="hl-map.js?v=20261106dekiai"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -164,7 +164,7 @@
     if (src) {
       var img = document.createElement("img");
       img.className = "hl-art-img";
-      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261002final";
+      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261106dekiai";
       img.alt = key.replace(/\n/g, " ");
       img.loading = "lazy";
       img.decoding = "async";
@@ -421,15 +421,16 @@
   setRich(document.getElementById("finalLine"), window.FINAL_LINE || "");
   document.getElementById("finalNote").textContent = window.FINAL_NOTE || "";
 
-  var bannerSrc = window.SEMINAR_BANNER || "images/seminar_banner.jpg";
+  var bannerSrc = window.SEMINAR_BANNER || "images/seminar_dekiai.png";
   document.querySelectorAll(".section-banner img").forEach(function (img) {
     img.src = bannerSrc;
   });
 
-  var url = window.SEMINAR_URL || "https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=37674&ts=1790607308";
+  var url = window.SEMINAR_URL || "https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064";
   document.querySelectorAll(".js-seminar").forEach(function (a) {
     a.href = url;
   });
+  document.querySelector("#stickyCta .js-seminar").textContent = window.SEMINAR_CTA_BUTTON;
   var mid = document.querySelector(".sec-seminar .primary-btn.js-seminar");
   if (mid) mid.textContent = result.ctaMid || window.SEMINAR_CTA_BUTTON;
   var finalBtn = document.querySelector(".sec-final .primary-btn.js-seminar");
@@ -438,3 +439,4 @@
 </script>
 </body>
 </html>
+
