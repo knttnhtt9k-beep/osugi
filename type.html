@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>縁の相性診断｜結果</title>
 <meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
-<link rel="stylesheet" href="result.css?v=20261106seminar">
+<link rel="stylesheet" href="result.css?v=20261106invitation">
 </head>
 <body>
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
@@ -79,6 +79,17 @@
     </figure>
   </section>
 
+  <section class="sec sec-hope" id="seminarInvitation">
+    <div class="sec-head">
+      <span class="sec-ico">✧</span>
+      <div>
+        <span class="sec-kicker">FOR YOU</span>
+        <h2>この結果を受け取った、あなたへ</h2>
+      </div>
+    </div>
+    <div class="rich" id="seminarBridgeText"></div>
+  </section>
+
   <section class="sec sec-seminar" id="seminarOffer">
     <div class="sec-head">
       <span class="sec-ico">▶</span>
@@ -132,9 +143,9 @@
   <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">溺愛術セミナーの日程を見る</a>
 </div>
 
-<script src="cosmic.js?v=20261106seminar"></script>
-<script src="types-data.js?v=20261106seminar"></script>
-<script src="hl-map.js?v=20261106seminar"></script>
+<script src="cosmic.js?v=20261106invitation"></script>
+<script src="types-data.js?v=20261106invitation"></script>
+<script src="hl-map.js?v=20261106invitation"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -164,7 +175,7 @@
     if (src) {
       var img = document.createElement("img");
       img.className = "hl-art-img";
-      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261106seminar";
+      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261106invitation";
       img.alt = key.replace(/\n/g, " ");
       img.loading = "lazy";
       img.decoding = "async";
@@ -327,6 +338,7 @@
   setRich(document.getElementById("featureText"), result.feature);
   setRich(document.getElementById("warnText"), result.warn);
   setRich(document.getElementById("hopeText"), result.hope);
+  setRich(document.getElementById("seminarBridgeText"), result.seminarBridge);
   setRich(document.getElementById("seminarText"), result.seminar);
   setRich(document.getElementById("teacherOsugi"), window.TEACHER_OSUGI || "");
   setRich(document.getElementById("reassureText"), window.REASSURE_COMMON || "");
