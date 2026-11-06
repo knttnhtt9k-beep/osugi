@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>縁の相性診断｜結果</title>
 <meta property="og:title" content="私たちは結ばれる？ 縁の相性診断">
-<link rel="stylesheet" href="result.css?v=20261106dekiai2">
+<link rel="stylesheet" href="result.css?v=20261106persona">
 </head>
 <body>
 <canvas id="cosmicCanvas" aria-hidden="true"></canvas>
@@ -91,7 +91,7 @@
       <img src="images/seminar_dekiai.jpg" alt="運命の人から愛される 宇宙の溺愛術" width="800" height="450" loading="lazy">
     </a>
     <div class="rich" id="seminarText"></div>
-    <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">セミナーの日程を選んで申し込む</a>
+    <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">溺愛術セミナーの日程を見る</a>
     <p class="btn-note">11/15・11/16 各21:00〜｜Zoom開催・約90分</p>
   </section>
 
@@ -122,19 +122,19 @@
       <img src="images/seminar_dekiai.jpg" alt="運命の人から愛される 宇宙の溺愛術" width="800" height="450" loading="lazy">
     </a>
     <p class="final-line" id="finalLine"></p>
-    <a class="primary-btn primary-btn-lg js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">セミナーの日程を選んで申し込む</a>
+    <a class="primary-btn primary-btn-lg js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">溺愛術セミナーの日程を見る</a>
     <p class="btn-note" id="finalNote"></p>
     <a class="ghost-btn" href="index.html">診断トップへ戻る</a>
   </section>
 </div>
 
 <div class="sticky-cta" id="stickyCta">
-  <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">セミナーの日程を選んで申し込む</a>
+  <a class="primary-btn js-seminar" href="https://liff.line.me/2009700161-Cfmz4ETk?booking_event_id=43775&ts=1793929064" target="_blank" rel="noopener">溺愛術セミナーの日程を見る</a>
 </div>
 
-<script src="cosmic.js?v=20261106dekiai2"></script>
-<script src="types-data.js?v=20261106dekiai2"></script>
-<script src="hl-map.js?v=20261106dekiai2"></script>
+<script src="cosmic.js?v=20261106persona"></script>
+<script src="types-data.js?v=20261106persona"></script>
+<script src="hl-map.js?v=20261106persona"></script>
 <script>
 (function () {
   function escapeHtml(s) {
@@ -164,7 +164,7 @@
     if (src) {
       var img = document.createElement("img");
       img.className = "hl-art-img";
-      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261106dekiai2";
+      img.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "v=20261106persona";
       img.alt = key.replace(/\n/g, " ");
       img.loading = "lazy";
       img.decoding = "async";
@@ -336,7 +336,7 @@
   var stickyUnlocked = false;
   var triggerPhrase = "セミナーの最初に、はっきりお伝えします";
   var warnRoot = document.getElementById("warnText");
-  var triggerEl = null;
+  var triggerEl = document.getElementById("warnText");
   if (warnRoot) {
     Array.prototype.forEach.call(warnRoot.querySelectorAll(".para, .hl-art"), function (p) {
       var t = p.alt || p.getAttribute("alt") || p.textContent || "";
@@ -418,7 +418,7 @@
 
   document.getElementById("seminarSectionTitle").innerHTML =
     window.SEMINAR_SECTION_TITLE || "";
-  setRich(document.getElementById("finalLine"), window.FINAL_LINE || "");
+  setRich(document.getElementById("finalLine"), result.finalLine || window.FINAL_LINE || "");
   document.getElementById("finalNote").textContent = window.FINAL_NOTE || "";
 
   var bannerSrc = window.SEMINAR_BANNER || "images/seminar_dekiai.jpg";
@@ -439,4 +439,3 @@
 </script>
 </body>
 </html>
-
